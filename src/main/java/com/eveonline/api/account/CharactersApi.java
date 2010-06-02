@@ -5,13 +5,14 @@
 package com.eveonline.api.account;
 
 import com.eveonline.api.ApiListResult;
+import com.eveonline.api.ApiService;
 import com.eveonline.api.LimitedApiKey;
 import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface CharactersApi {
+public interface CharactersApi extends ApiService {
 
 	/**
 	 * @param key limited api key
