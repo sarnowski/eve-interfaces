@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.map;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 
 /**
@@ -23,6 +22,9 @@ import com.eveonline.api.ApiService;
  */
 public interface FacWarSystemsApi extends ApiService {
 
-	ApiListResult<FacWarSystem> getFactionWarfareSystems();
+	/**
+	 * @return list of solar systems used for the faction warfare
+	 */
+	FacWarSystems getFactionWarfareSystems();
 
 }

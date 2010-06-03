@@ -15,21 +15,41 @@
  */
 package com.eveonline.api.map;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface FacWarSystem extends ApiResult {
+public interface FacWarSystems extends ApiListResult<FacWarSystems.SolarSystem> {
 
-	int getSolarSystemId();
+	interface SolarSystem extends ApiResult {
 
-	String getSolarSystemName();
+		/**
+		 * @return the solar system's ID
+		 */
+		long getId();
 
-	int getOccupyingFactionId();
+		/**
+		 * @return the solar system's name
+		 */
+		String getName();
 
-	String getOccupyingFactionName();
+		/**
+		 * @return the faction's ID, owning the solar system
+		 */
+		long getOccupyingFactionId();
 
-	boolean isContested();
+		/**
+		 * @return the faction's name, owning the solar system
+		 */
+		String getOccupyingFactionName();
+
+		/**
+		 * @return if the system is contested by another faction
+		 */
+		boolean isContested();
+
+	}
 
 }
