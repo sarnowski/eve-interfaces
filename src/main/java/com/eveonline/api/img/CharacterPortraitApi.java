@@ -24,6 +24,17 @@ import java.io.InputStream;
  */
 public interface CharacterPortraitApi extends ApiService {
 
-	InputStream getCharacterPortrait(int characterId, int size);
+	/**
+	 * @param characterId the character's ID
+	 * @param size Size can be 64x64px or 256x264px
+	 * @return a JPEG encoded image of the character
+	 */
+	InputStream getCharacterPortrait(long characterId, PortraitSize size);
+
+
+	enum PortraitSize {
+		SIZE_64,
+		SIZE_256
+	}
 
 }
