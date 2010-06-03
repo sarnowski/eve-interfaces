@@ -23,6 +23,10 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ServerStatusApi extends ApiService {
 
+	/**
+	 * @return informations about the current server's status
+	 * @throws ApiException
+	 */
 	ServerStatus getServerStatus() throws ApiException;
 
 }
