@@ -11,7 +11,7 @@ import com.eveonline.api.FullApiKey;
 /**
  * @author Tobias Sarnowski
  */
-public interface WalletTransactionApi extends ApiService {
+public interface WalletTransactionsApi extends ApiService {
 
 	ApiListResult<WalletTransaction> getWalletTransactions(FullApiKey key, int characterId);
 
