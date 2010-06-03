@@ -18,10 +18,10 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
-import com.eveonline.api.CeoApiKey;
+import com.eveonline.api.DirectorApiKey;
 
 public interface MemberTrackingApi extends ApiResult{
 
-    ApiListResult<Member> getMembers(CeoApiKey apiKey, int characterId);
+    ApiListResult<Member> getMembers(DirectorApiKey apiKey, int characterId);
 
 }

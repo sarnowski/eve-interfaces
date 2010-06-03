@@ -21,6 +21,6 @@ package com.eveonline.api;
  * 
  * @author Tobias Sarnowski
  */
-public interface CeoApiKey extends FullApiKey {
+public interface DirectorApiKey extends FullApiKey {
 
 }

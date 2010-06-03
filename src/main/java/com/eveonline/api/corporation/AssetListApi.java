@@ -22,10 +22,10 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
-import com.eveonline.api.CeoApiKey;
+import com.eveonline.api.DirectorApiKey;
 
 public interface AssetListApi extends ApiService {
 
-	ApiListResult<Asset.Container> getAssets(CeoApiKey key, int characterId);
+	ApiListResult<Asset.Container> getAssets(DirectorApiKey key, int characterId);
 
 }

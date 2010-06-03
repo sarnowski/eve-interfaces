@@ -18,15 +18,15 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
-import com.eveonline.api.CeoApiKey;
+import com.eveonline.api.DirectorApiKey;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface KillLogApi extends ApiService {
 
-	ApiListResult<KillLog> getKillLogs(CeoApiKey key, int characterId);
+	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, int characterId);
 
-	ApiListResult<KillLog> getKillLogs(CeoApiKey key, int characterId, int beforeKillId);
+	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, int characterId, int beforeKillId);
 
 }

@@ -16,8 +16,8 @@
 
 package com.eveonline.api.corporation;
 
-import com.eveonline.api.CeoApiKey;
+import com.eveonline.api.DirectorApiKey;
 
 public interface StarbaseDetailApi {
-    StarbaseDetail getStarbaseDetail(CeoApiKey apiKey, int characterId, int itemId);
+    StarbaseDetail getStarbaseDetail(DirectorApiKey apiKey, int characterId, int itemId);
 }

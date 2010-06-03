@@ -18,8 +18,8 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
-import com.eveonline.api.CeoApiKey;
+import com.eveonline.api.DirectorApiKey;
 
 public interface StarbaseListApi extends ApiService {
-    ApiListResult<Starbase> getStarbases(CeoApiKey apiKey, int characterId, int apiVersion);
+    ApiListResult<Starbase> getStarbases(DirectorApiKey apiKey, int characterId, int apiVersion);
 }

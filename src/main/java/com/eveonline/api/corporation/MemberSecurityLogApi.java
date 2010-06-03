@@ -18,11 +18,11 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
-import com.eveonline.api.CeoApiKey;
+import com.eveonline.api.DirectorApiKey;
 
 public interface MemberSecurityLogApi extends ApiService{
 
-    ApiListResult<RoleHistory> getRoleHistory(CeoApiKey apiKey, int characterId);
+    ApiListResult<RoleHistory> getRoleHistory(DirectorApiKey apiKey, int characterId);
 
 
 }
