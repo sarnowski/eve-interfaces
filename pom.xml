@@ -93,7 +93,7 @@
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
-				<version>1.6.0</version>
+				<version>1.6.1</version>
 				<configuration>
 					<header>src/main/resources/LICENSE_HEADER.txt</header>
 					<includes>
