@@ -4,10 +4,12 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiService;
+
 /**
  * @author Tobias Sarnowski
  */
-public interface UpcomingCalendarEvents {
+public interface UpcomingCalendarEventsApi extends ApiService {
 
 	// TODO
 
