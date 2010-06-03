@@ -23,24 +23,40 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface Sovereignty extends ApiResult {
+public interface Sovereignty extends ApiListResult<Sovereignty.SolarSystem> {
 
+	/**
+	 * @return when the list data was recorded
+	 */
 	Date getDataTime();
-
-	ApiListResult<SolarSystem> getSolarSystems();
 
 
 	interface SolarSystem extends ApiResult {
 
-		int getSolarSystemId();
+		/**
+		 * @return the solar system's ID
+		 */
+		long getId();
 
-		int getAllianceId();
+		/**
+		 * @return the solar system's name
+		 */
+		String getName();
 
-		int getFactionId();
+		/**
+		 * @return the alliance ID of the owning alliance
+		 */
+		long getAllianceId();
 
-		String getSolarSystemName();
+		/**
+		 * @return the faction ID of the owning faction
+		 */
+		long getFactionId();
 
-		int getCorporationId();
+		/**
+		 * @return the corporation's ID
+		 */
+		long getCorporationId();
 
 	}
 

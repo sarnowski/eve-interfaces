@@ -36,12 +36,12 @@ public interface FacWarSystems extends ApiListResult<FacWarSystems.SolarSystem> 
 		String getName();
 
 		/**
-		 * @return the faction's ID, owning the solar system
+		 * @return a non-zero ID if the occupying faction is not the sovereign faction.
 		 */
 		long getOccupyingFactionId();
 
 		/**
-		 * @return the faction's name, owning the solar system
+		 * @return the occupying faction's name
 		 */
 		String getOccupyingFactionName();
 

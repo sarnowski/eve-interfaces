@@ -15,15 +15,33 @@
  */
 package com.eveonline.api.map;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
+
+import java.util.Date;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface Jumps extends ApiResult {
+public interface Jumps extends ApiListResult<Jumps.SolarSystem> {
 
-	int getSolarSystemId();
+	/**
+	 * @return when the list data was recorded
+	 */
+	Date getDataTime();
 
-	int getShipJumps();
+	interface SolarSystem extends ApiResult {
+
+		/**
+		 * @return the solar system's ID
+		 */
+		long getId();
+
+		/**
+		 * @return the count of ships, jumped to and from this system
+		 */
+		int getShipJumps();
+
+	}
 
 }

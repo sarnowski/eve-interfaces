@@ -18,6 +18,8 @@ package com.eveonline.api.map;
 import com.eveonline.api.ApiService;
 
 /**
+ * Currently not available.
+ *
  * @author Tobias Sarnowski
  */
 public interface SovereigntyStatusApi extends ApiService {

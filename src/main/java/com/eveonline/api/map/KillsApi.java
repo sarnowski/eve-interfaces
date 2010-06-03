@@ -22,6 +22,9 @@ import com.eveonline.api.ApiService;
  */
 public interface KillsApi extends ApiService {
 
+	/**
+	 * @return returns a list of solar system's and their kills
+	 */
 	Kills getKills();
 
 }

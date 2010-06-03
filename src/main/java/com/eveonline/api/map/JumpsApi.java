@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.map;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 
 /**
@@ -23,6 +22,9 @@ import com.eveonline.api.ApiService;
  */
 public interface JumpsApi extends ApiService {
 
-	ApiListResult<Jumps> getJumps();
+	/**
+	 * @return a list of all systems with a minimum of one jump
+	 */
+	Jumps getJumps();
 
 }

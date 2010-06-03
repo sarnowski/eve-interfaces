@@ -23,21 +23,34 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface Kills extends ApiResult {
+public interface Kills extends ApiListResult<Kills.SolarSystem> {
 
+	/**
+	 * @return when the list data was recorded
+	 */
 	Date getDataTime();
 
-	ApiListResult<Kill> getKills();
 
+	interface SolarSystem extends ApiResult {
 
-	interface Kill extends ApiResult {
+		/**
+		 * @return the solar system's ID
+		 */
+		long getId();
 
-		int getSolarSystemId();
-
+		/**
+		 * @return the kill count of the solar system
+		 */
 		int getShipKills();
 
+		/**
+		 * @return the faction kill count of the solar system
+		 */
 		int getFactionKills();
 
+		/**
+		 * @return the pod kill count of the solar system
+		 */
 		int getPodKills();
 
 	}

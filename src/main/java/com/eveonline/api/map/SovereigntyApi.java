@@ -22,6 +22,9 @@ import com.eveonline.api.ApiService;
  */
 public interface SovereigntyApi extends ApiService {
 
+	/**
+	 * @return a list of solar system's with their owners
+	 */
 	Sovereignty getSovereignty();
 
 }
