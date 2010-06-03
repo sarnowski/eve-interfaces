@@ -4,6 +4,7 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 /**
@@ -21,4 +22,14 @@ public interface Asset extends ApiResult {
 
 	boolean isSingleton();
 
+	/**
+	 * @author Tobias Sarnowski
+	 */
+	interface Container extends Asset {
+
+		int getLocationId();
+
+		ApiListResult<Asset> getContainingAssets();
+
+	}
 }

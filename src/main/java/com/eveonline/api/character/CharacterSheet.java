@@ -4,8 +4,10 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiListResult;
+import com.eveonline.api.ApiResult;
+
 import java.math.BigDecimal;
-import java.util.List;
 
 /**
  * @author Tobias Sarnowski
@@ -30,16 +32,86 @@ public interface CharacterSheet {
 
 	int getCloneSkillPoints();
 
+	ApiListResult<Skills> getSkills();
+
 	BigDecimal getBalance();
 
-	List<CharacterSheetAttributeEnhancer> getAttributeEnhancers();
+	ApiListResult<AttributeEnhancer> getAttributeEnhancers();
 
-	List<CharacterSheetCorporationRole> getCorporationRoles();
+	ApiListResult<CorporationRole> getCorporationRoles();
 
-	List<CharacterSheetCorporationRole> getCorporationRolesAtHQ();
+	ApiListResult<CorporationRole> getCorporationRolesAtHQ();
 
-	List<CharacterSheetCorporationRole> getCorporationRolesAtOther();
+	ApiListResult<CorporationRole> getCorporationRolesAtOther();
 
-	
 
+	/**
+	 * @author Tobias Sarnowski
+	 */
+	interface Attribute extends ApiResult {
+
+		String getAttributeName();
+
+		int getAttributeValue();
+
+	}
+
+	/**
+	 * @author Tobias Sarnowski
+	 */
+	interface AttributeEnhancer extends ApiResult {
+
+		String getAugementorAttribute();
+
+		String getAugementorName();
+
+		int getAugementorValue();
+
+	}
+
+	/**
+	 * @author Tobias Sarnowski
+	 */
+	interface Certificate extends ApiResult {
+
+		int getCertificateId();
+
+	}
+
+	/**
+	 * @author Tobias Sarnowski
+	 */
+	interface CorporationRole extends ApiResult {
+
+		int getRoleId();
+
+		String getRoleName();
+
+	}
+
+	/**
+	 * @author Tobias Sarnowski
+	 */
+	interface CorporationTitle extends ApiResult {
+
+		int getTitleId();
+
+		String getTitleName();
+
+	}
+
+	/**
+	 * @author Tobias Sarnowski
+	 */
+	interface Skills extends ApiResult {
+
+		int getTypeId();
+
+		int getSkillPoints();
+
+		int getLevel();
+
+		boolean isUnpublished();
+
+	}
 }

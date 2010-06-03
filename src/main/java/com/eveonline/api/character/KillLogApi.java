@@ -11,8 +11,10 @@ import com.eveonline.api.FullApiKey;
 /**
  * @author Tobias Sarnowski
  */
-public interface AssetListApi extends ApiService {
+public interface KillLogApi extends ApiService {
 
-	ApiListResult<Asset.Container> getAssets(FullApiKey key, int characterId);
+	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId);
+
+	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId, int beforeKillId);
 
 }
