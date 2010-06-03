@@ -9,8 +9,8 @@ import com.eveonline.api.ApiService;
 /**
  * @author Tobias Sarnowski
  */
-public interface KillsApi extends ApiService {
+public interface SovereigntyApi extends ApiService {
 
-	Kills getKills();
+	Sovereignty getSovereignty();
 
 }
