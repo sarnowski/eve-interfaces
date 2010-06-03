@@ -16,9 +16,12 @@
 package com.eveonline.api.exceptions;
 
 /**
+ * Represents an error from the remote api.
+ *
  * @author Tobias Sarnowski
  */
 public class ApiResultException extends ApiException {
+
 	private int errorCode;
 	private String errorMessage;
 
