@@ -32,6 +32,6 @@ public interface ApiKey extends Serializable {
 	/**
 	 * @return the api key
 	 */
-	String getKey();
+	String getApiKey();
 
 }

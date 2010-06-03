@@ -27,7 +27,7 @@ import java.util.Map;
 public interface ApiResult {
 
 	/**
-	 * @return the time of this response creation
+	 * @return the time of this result's creation
 	 */
 	Date getDateCreated();
 
@@ -38,7 +38,7 @@ public interface ApiResult {
 
 
 	/**
-	 * @return the requested xml path
+	 * @return the requested xml path e.g. /server/ServerStatus.xml
 	 */
 	String getRequestedXmlPath();
 

@@ -16,7 +16,10 @@
 package com.eveonline.api;
 
 /**
+ * Marks a requestable api service
+ *
  * @author Tobias Sarnowski
  */
 public interface ApiService {
+	
 }
