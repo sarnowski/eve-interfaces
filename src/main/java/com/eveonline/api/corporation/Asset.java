@@ -20,22 +20,50 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface Asset extends ApiResult {
 
+    /**
+     * @return ID of the Item.
+     */
 	int getItemId();
 
+    /**
+     * @return type ID of the item. References to invTypes database table.
+     */
 	int getTypeId();
 
+    /**
+     * @return Number of items in the stack.
+     */
 	int getQuantity();
 
+    /*
+     * @return Storage location.
+     * @see http://wiki.eve-id.net/API_Inventory_Flags
+     */
 	int getFlag();
 
+    /**
+     * @return true when the item is packed.
+     */
 	boolean isSingleton();
 
+    /**
+     * The container gives location information. 
+     */
 	interface Container extends Asset {
 
+        /**
+         * @return References to a solar system or a station.
+         */
 		int getLocationId();
 
+        /**
+         * @return the Assets contained in the container.
+         */
 		ApiListResult<Asset> getContainingAssets();
 
 	}

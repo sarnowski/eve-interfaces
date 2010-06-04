@@ -24,8 +24,16 @@ import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface AssetListApi extends ApiService {
 
+    /**
+     * @param key           EVE-Api credentials from a director or CEO
+     * @param characterId   Character ID of the director/CEO
+     * @return Container with all Assets from the corporation. 
+     */
 	ApiListResult<Asset.Container> getAssets(DirectorApiKey key, int characterId);
 
 }
