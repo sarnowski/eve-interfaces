@@ -21,55 +21,59 @@ import com.eveonline.api.ApiResult;
 /**
  * @author Tobias Sarnowski
  */
-public interface CertificateTree extends ApiResult {
+public interface CertificateTree extends ApiListResult<CertificateTree.Category> {
 
-	int getCategoryId();
+    interface Category extends ApiResult {
 
-	String getCategoryName();
+        int getCategoryId();
 
-	ApiListResult<Classes> getClasses();
+        String getCategoryName();
+
+        ApiListResult<Classes> getClasses();
+        
+    }
 
 
-	interface Classes extends ApiResult {
+    interface Classes extends ApiResult {
 
-		int getClassId();
+        int getClassId();
 
-		String getClassName();
+        String getClassName();
 
-		ApiListResult<Certificate> getCertificates();
+        ApiListResult<Certificate> getCertificates();
 
-	}
+    }
 
-	interface Certificate extends ApiResult {
+    interface Certificate extends ApiResult {
 
-		int getCertificateId();
+        int getCertificateId();
 
-		int getGrade();
+        int getGrade();
 
-		int getCorporationId();
+        int getCorporationId();
 
-		String getDescription();
+        String getDescription();
 
-		ApiListResult<RequiredSkill> getRequiredSkills();
+        ApiListResult<RequiredSkill> getRequiredSkills();
 
-		ApiListResult<RequiredCertificate> getRequiredCertificates();
+        ApiListResult<RequiredCertificate> getRequiredCertificates();
 
-	}
+    }
 
-	interface RequiredSkill extends ApiResult {
+    interface RequiredSkill extends ApiResult {
 
-		int getTypeId();
+        int getTypeId();
 
-		int getLevel();
+        int getLevel();
 
-	}
+    }
 
-	interface RequiredCertificate extends ApiResult {
+    interface RequiredCertificate extends ApiResult {
 
-		int getCertificateId();
+        int getCertificateId();
 
-		int getGrade();
+        int getGrade();
 
-	}
+    }
 
 }

@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.eve;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 
 /**
@@ -23,6 +22,9 @@ import com.eveonline.api.ApiService;
  */
 public interface CertificateTreeApi extends ApiService {
 
-	ApiListResult<CertificateTree> getCertificateTree();
+    /**
+     * @return a list of all certificates, grouped by categories and classes
+     */
+	CertificateTree getCertificateTree();
 
 }
