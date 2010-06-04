@@ -20,13 +20,15 @@ import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 
-public interface IndustryJobsApi extends ApiService{
+/**
+ * @author Dominik Eckelmann
+ */
+public interface IndustryJobsApi extends ApiService {
 
     /**
-     *
      * @param apiKey api credentials
-     * @param characterId characterID of character whose jobs you want to access. For corp data, the character must have the role 'Factory Manager'.
-     * @return
+     * @param characterId characterID of a character that must have the role 'Factory Manager'.
+     * @return Industry jobs.
      */
-    ApiListResult<Jobs> getJobs(FullApiKey apiKey, int characterId);
+    ApiListResult<Job> getJobs(FullApiKey apiKey, int characterId);
 }
