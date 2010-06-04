@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.eve;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 
 /**
@@ -23,6 +22,9 @@ import com.eveonline.api.ApiService;
  */
 public interface AllianceListApi extends ApiService {
 
-	ApiListResult<Alliance> getAllianceList();
+    /**
+     * @return a list of all alliances
+     */
+	AllianceList getAllianceList();
 
 }
