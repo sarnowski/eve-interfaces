@@ -19,7 +19,22 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.LimitedApiKey;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface CorporationSheetApi extends ApiService {
 
+    /**
+     * @param apiKey      Limited API key.
+     * @param characterId Character of the corporation you want the sheet from.
+     * @return a corporation sheet.
+     */
     CorporationSheet getCorporationSheet(LimitedApiKey apiKey, int characterId);
+
+    /**
+     * @param apiKey            Limited API key.
+     * @param corporationId     Id of the corporation to get the sheet from.
+     * @return a corporation sheet from another corporation.
+     */
+    CorporationSheetShort getCorporationSheetShort(LimitedApiKey apiKey, int corporationId);
 }

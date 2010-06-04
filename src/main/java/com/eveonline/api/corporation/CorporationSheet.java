@@ -19,44 +19,55 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
-public interface CorporationSheet extends ApiResult{
-
-    int getCorporationID();
-
-    String getCorporationName();
+/**
+ * @author Dominik Eckelmann
+ */
+public interface CorporationSheet extends CorporationSheetShort {
 
     /**
-     * @return Corp Ticker, often used as a nickname. is 6 the max length for the corp ticker?
+     * @return Current member limit.
      */
-    String getTicker();
-
-    int getCeoId();
-
-    String getCeoName();
-
-    int getStationId();
-
-    String getStationName();
-
-    String getDescription();
-
-    String getUrl();
-
-    int getAllianceId();
-
-    String getAllianceName();
-
-    String getTaxRate();
-
-    int getMemberCount();
-
     int getMemberLimit();
 
-    int getShares();
+    /**
+     * @return Corporation divisions names.
+     */
+    ApiListResult<CorporationSheet.Division> getDivisions();
 
-    ApiListResult<Divisions> getDivisions();
+    /**
+     * @return Corporation wallet division names.
+     */
+    ApiListResult<CorporationSheet.WalletDivision> getWalletDivisions();
 
-    ApiListResult<WalletDivisions> getWalletDivisions();
+    /**
+     * @author Dominik Eckelmann
+     */
+    public interface Division extends ApiResult {
 
-    Logo getLogo();
+        /**
+         * @return Division key. (corporation hangar id).
+         */
+       int getAccountKey();
+
+        /**
+         * @return Division name. (corporation hangar name.
+         */
+        String getDescription();
+    }
+
+    /**
+     * @author Dominik Eckelmann
+     */
+    public interface WalletDivision extends ApiResult {
+
+        /**
+         * @return Wallet division key.
+         */
+        int getAccountKey();
+
+        /**
+         * @return Wallet division name.
+         */
+        String getDescription();
+    }
 }
