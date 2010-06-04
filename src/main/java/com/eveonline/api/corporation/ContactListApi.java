@@ -20,12 +20,19 @@
  */
 package com.eveonline.api.corporation;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface ContactListApi extends ApiService {
 
-	ContactList getContactList(FullApiKey apiKey, int characterId);
+    /**
+     * @param apiKey        EVE-Api credentials.
+     * @param characterId   CharacterId of a character in the corporation.
+     * @return Contact list of corporation from the given character. 
+     */
+	Contact.ContactList getContactList(FullApiKey apiKey, int characterId);
 
 }

@@ -20,14 +20,37 @@
  */
 package com.eveonline.api.corporation;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 public interface Contact extends ApiResult {
 
+    /**
+     * @return Contact ID - depending on the contact list.
+     */
 	int getContactId();
 
+    /**
+     * @return The contact's name.
+     */
 	String getContactName();
 
+    /**
+     * @return the standing to the contact.
+     */
 	int getStanding();
+
+    public interface ContactList extends ApiResult{
+
+        /**
+         * @return Get all corporation contacts.
+         */
+        ApiListResult<Contact> getCorporateContacts();
+
+        /**
+         * @return Get all alliance contacts.
+         */
+        ApiListResult<Contact> getAllianceContacts();
+    }
 
 }
