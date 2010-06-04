@@ -20,11 +20,24 @@ import com.eveonline.api.ApiResult;
 
 import java.util.Date;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface ContainerLog extends ApiResult{
+
+    /**
+     * @return Time of the logentry.
+     */
     Date getLogTime();
 
+    /**
+     * @return Item the entry belongs to.
+     */
     int getItemId();
 
+    /**
+     * @return Item type ID.
+     */
     int getItemTypeId();
 
     /**
@@ -37,19 +50,35 @@ public interface ContainerLog extends ApiResult{
      */
     String getActorName();
 
-    int getFlag(); // FIXME: flag?
-
-    int getLocationId();
-
-    String getAction();
-
-    String getPasswordType(); // FIXME
+    /*
+     * @return Storage location.
+     * @see http://wiki.eve-id.net/API_Inventory_Flags
+     */
+    int getFlag();
 
     /**
-     * @return ID of item type in log?
+     * @return Location ID of the container the log belongs to.
+     */
+    int getLocationId();
+
+    /**
+     * @return What happened to the container.
+     */
+    String getAction();
+
+    /**
+     * @return Which password type was changed. Config or Container.
+     */
+    String getPasswordType();
+
+    /**
+     * @return the container item type ID.
      */
     int getTypeId();
 
+    /**
+     * @return Quantity of modified items.
+     */
     int getQuantity();
 
     /**
@@ -61,6 +90,4 @@ public interface ContainerLog extends ApiResult{
      * @return old Flag option?
      */
     int getNewConfiguration();
-
-
 }

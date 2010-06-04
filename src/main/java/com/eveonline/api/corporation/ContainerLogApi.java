@@ -20,7 +20,15 @@ import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface ContainerLogApi extends ApiService {
 
+    /**
+     * @param apiKey        EVE-Api credentials.
+     * @param characterId   Character ID from a character in the corporation.
+     * @return Container logs.
+     */
     ApiListResult<ContainerLog> getContainerLog(FullApiKey apiKey, int characterId);
 }
