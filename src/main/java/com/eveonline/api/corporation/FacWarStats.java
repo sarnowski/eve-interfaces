@@ -20,25 +20,58 @@ import com.eveonline.api.ApiResult;
 
 import java.util.Date;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface FacWarStats extends ApiResult{
 
+    /**
+     * @return ID of the faction the corporation is enlisted to.
+     */
     int getFactionId();
 
+    /**
+     * @return Name of the faction the corporation is enlisted to.
+     */
     String getFactionName();
 
+    /**
+     * @return Enlisted to faction warfare since.
+     */
     Date getEnlisted();
 
+    /**
+     * @return pilots enlisted.
+     */
     int getPilots();
 
+    /**
+     * @return number of kills yesterday.
+     */
     int getKillsYesterday();
 
+    /**
+     * @return number of kills last week.
+     */
     int getKillsLastWeek();
 
+    /**
+     * @return number of kills overall.
+     */
     int getKillsTotal();
 
+    /**
+     * @return victory points yesterday.
+     */
     int getVictoryPointsYesterday();
 
+    /**
+     * @return victory points from last week.
+     */
     int getVictoryPointsLastWeek();
 
+    /**
+     * @return total victory points.
+     */
     int getVictoryPointsTotal();
 }

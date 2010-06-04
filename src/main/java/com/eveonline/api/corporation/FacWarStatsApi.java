@@ -19,8 +19,16 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.LimitedApiKey;
 
-
+/**
+ * @author Dominik Eckelmann
+ */
 public interface FacWarStatsApi extends ApiService{
 
+    /**
+     *
+     * @param apiKey        EVE-Api credentials.
+     * @param characterId   Character ID of a character in the corporation to get the information from.
+     * @return Faction Warfare Statistics or Error 125 if the corporation is not enlisted.
+     */
     FacWarStats getFacWarStats(LimitedApiKey apiKey, int characterId );
 }
