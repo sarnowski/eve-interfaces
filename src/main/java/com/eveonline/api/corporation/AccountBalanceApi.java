@@ -20,13 +20,17 @@ import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 
+/**
+ * @author Dominik Eckelmann
+ */
 public interface AccountBalanceApi extends ApiService {
 
     /**
+     * @param key           EVE-Api credentials.
+     * @param characterId   Character ID of a character with junior accountant or higher access in the corporation
+     *                      you want the balances for.
      *
-     * @param key api credentials
-     * @param characterId Character ID of a char with junior accountant or higher access in the corp you want the balances for.
-     * @return
+     * @return Account balances of every division from a corporation.
      */
     ApiListResult<AccountBalance> getAccountBalances(FullApiKey key, int characterId);
 }

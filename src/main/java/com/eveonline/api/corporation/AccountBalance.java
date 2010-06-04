@@ -20,13 +20,24 @@ import com.eveonline.api.ApiResult;
 
 import java.math.BigDecimal;
 
-
+/**
+ * @author Dominik Eckelmann
+ */
 public interface AccountBalance extends ApiResult {
 
-	int getAccountId();
+    /**
+     * @return ID of the account.
+     */
+	long getAccountId();
 
+    /**
+     * @return Account identifier of corporation wallet division.
+     */
 	int getAccountKey();
 
+    /**
+     * @return Amount of ISK on the wallet. 
+     */
 	BigDecimal getBalance();
 
 }
