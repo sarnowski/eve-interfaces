@@ -27,6 +27,12 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MedalsApi extends ApiService {
 
-    ApiListResult<Medals> getMedals(LimitedApiKey apiKey, int characterIds) throws ApiException;
+    /**
+     * @param apiKey        EVE-Api credentials.
+     * @param characterIds  Character ID from a Character of the corporation.
+     * @return All availible Medals.
+     * @throws ApiException
+     */
+    ApiListResult<Medal> getMedals(LimitedApiKey apiKey, long characterIds) throws ApiException;
 
 }
