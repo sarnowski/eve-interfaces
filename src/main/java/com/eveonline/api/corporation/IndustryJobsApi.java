@@ -30,5 +30,5 @@ public interface IndustryJobsApi extends ApiService {
      * @param characterId characterID of a character that must have the role 'Factory Manager'.
      * @return Industry jobs.
      */
-    ApiListResult<Job> getJobs(FullApiKey apiKey, long characterId);
+    ApiListResult<IndustryJob> getJobs(FullApiKey apiKey, long characterId);
 }

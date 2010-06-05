@@ -23,10 +23,10 @@ import java.util.Date;
 /**
  * @author Dominik Eckelmann
  */
-public interface Job extends ApiResult {
+public interface IndustryJob extends ApiResult {
 
     /**
-     * @return Unique id of the Job.
+     * @return Unique id of the IndustryJob.
      */
     long getJobId();
 
@@ -39,7 +39,7 @@ public interface Job extends ApiResult {
 
     /**
      * @return if the container is a station the station id. if it's a pos module the item id.
-     * @see {@link Job#getContainerTypeId()} to determine if the container is a station. 
+     * @see {@link IndustryJob#getContainerTypeId()} to determine if the container is a station.
      */
     long getContainerId();
 
@@ -173,7 +173,7 @@ public interface Job extends ApiResult {
     long getActivityId();
 
     /**
-     * @return Completion status - only matters if {@link Job#isCompleted()} returns true
+     * @return Completion status - only matters if {@link IndustryJob#isCompleted()} returns true
      */
     CompletionStatus getCompletedStatus();
 
