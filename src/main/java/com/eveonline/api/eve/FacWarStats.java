@@ -23,61 +23,130 @@ import com.eveonline.api.ApiResult;
  */
 public interface FacWarStats extends ApiResult {
 
+	/**
+	 * @return statistics about all faction wars in general
+	 */
 	Totals getTotals();
 
+	/**
+	 * @return a list of all factions in the war
+	 */
 	ApiListResult<Faction> getFactions();
 
+	/**
+	 * @return a list of all wars
+	 */
 	ApiListResult<FactionWar> getFactionWars();
 
 
 	interface Totals extends ApiResult {
 
+		/**
+		 * @return kills made yesterday
+		 */
 		int getKillsYesterday();
 
+		/**
+		 * @return kills made in the last week
+		 */
 		int getKillsLastWeek();
 
+		/**
+		 * @return kills made in the whole time
+		 */
 		int getKillsTotal();
 
-		int getVictoryPointsYesterday();
+		/**
+		 * @return victory points gained yesterday
+		 */
+		long getVictoryPointsYesterday();
 
-		int getVictoryPointsLastWeek();
+		/**
+		 * @return victory points gained in the last week
+		 */
+		long getVictoryPointsLastWeek();
 
-		int getVictoryPointsTotal();
+		/**
+		 * @return victory points gained in the whole time
+		 */
+		long getVictoryPointsTotal();
 
 	}
 
 	interface Faction extends ApiResult {
 
-		int getFactionId();
+		/**
+		 * @return the faction's ID
+		 */
+		int getId();
 
-		String getFactionName();
+		/**
+		 * @return the faction's name
+		 */
+		String getName();
 
+		/**
+		 * @return count of pilots, fighting for this faction
+		 */
 		int getPilots();
 
+		/**
+		 * @return count of systems, controlled by this faction
+		 */
 		int getSystemsControlled();
 
+		/**
+		 * @return kills made by this faction yesterday
+		 */
 		int getKillsYesterday();
 
+		/**
+		 * @return kills made by this faction last week
+		 */
 		int getKillsLastWeek();
 
+		/**
+		 * @return kills made by this faction in the whole time
+		 */
 		int getKillsTotal();
 
-		int getVictoryPointsYesterday();
+		/**
+		 * @return victory points made by this faction yesterday
+		 */
+		long getVictoryPointsYesterday();
 
-		int getVictoryPointsLastWeek();
+		/**
+		 * @return victory points made by this faction last week
+		 */
+		long getVictoryPointsLastWeek();
 
-		int getVictoryPointsTotal();
+		/**
+		 * @return victory points made by this faction in the whole time
+		 */
+		long getVictoryPointsTotal();
 
 	}
 
 	interface FactionWar extends ApiResult {
 
-		int getFactionId();
+		/**
+		 * @return the fighting faction's ID
+		 */
+		long getFactionId();
 
+		/**
+		 * @return the fighting faction's name
+		 */
 		String getFactionName();
 
+		/**
+		 * @return the faction's ID, fighting against the first one
+		 */
 		int getAgainstId();
 
+		/**
+		 * @return the faction's name, fighting against the first one
+		 */
 		String getAgainstName();
 
 	}

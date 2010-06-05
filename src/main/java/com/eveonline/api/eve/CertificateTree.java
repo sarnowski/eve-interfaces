@@ -17,6 +17,7 @@ package com.eveonline.api.eve;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
+import com.eveonline.constants.SkillLevel;
 
 /**
  * @author Tobias Sarnowski
@@ -106,7 +107,7 @@ public interface CertificateTree extends ApiListResult<CertificateTree.Category>
 	    /**
 	     * @return the required level
 	     */
-        int getLevel();
+        SkillLevel getLevel();
 
     }
 

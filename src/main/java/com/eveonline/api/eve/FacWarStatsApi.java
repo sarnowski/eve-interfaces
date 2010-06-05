@@ -23,6 +23,10 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface FacWarStatsApi extends ApiService {
 
-	FacWarStats getFactionWarfareStatistics() throws ApiException;
+	/**
+	 * @return faction warfare statistics
+	 * @throws ApiException
+	 */
+	FacWarStats getFacWarStats() throws ApiException;
 
 }

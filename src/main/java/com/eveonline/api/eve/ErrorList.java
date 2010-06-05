@@ -15,23 +15,26 @@
  */
 package com.eveonline.api.eve;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface ConquerableStation extends ApiResult {
+public interface ErrorList extends ApiListResult<ErrorList.Error> {
 
-	int getStationId();
+	interface Error extends ApiResult {
 
-	String getStationName();
+		/**
+		 * @return the error code
+		 */
+		int getCode();
 
-	int getStationTypeId();
+		/**
+		 * @return the message which will be used
+		 */
+		String getMessage();
 
-	int getSolarSystemId();
-
-	int getCorporationId();
-
-	String getCorporationName();
+	}
 
 }

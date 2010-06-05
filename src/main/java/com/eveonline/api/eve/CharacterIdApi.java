@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.eve;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.exceptions.ApiException;
 
@@ -24,6 +23,11 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface CharacterIdApi extends ApiService {
 
-	ApiListResult<CharacterId> getCharacterIds(Iterable<String> names) throws ApiException;
+	/**
+	 * @param names a list of names you want to resolve
+	 * @return the list of IDs for the given names
+	 * @throws ApiException
+	 */
+	CharacterId getCharacterIds(Iterable<String> names) throws ApiException;
 
 }

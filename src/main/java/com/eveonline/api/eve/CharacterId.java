@@ -15,15 +15,26 @@
  */
 package com.eveonline.api.eve;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface CharacterId extends ApiResult {
+public interface CharacterId extends ApiListResult {
 
-	String getName();
+	interface Id extends ApiResult {
 
-	int getCharacterId();
+		/**
+		 * @return thr resolved ID
+		 */
+		long getId();
+
+		/**
+		 * @return the used name
+		 */
+		String getName();
+
+	}
 
 }

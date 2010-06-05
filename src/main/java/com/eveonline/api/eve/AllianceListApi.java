@@ -25,6 +25,7 @@ public interface AllianceListApi extends ApiService {
 
     /**
      * @return a list of all alliances
+     * @throws ApiException
      */
 	AllianceList getAllianceList() throws ApiException;
 

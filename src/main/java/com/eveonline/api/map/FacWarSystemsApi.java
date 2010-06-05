@@ -25,6 +25,7 @@ public interface FacWarSystemsApi extends ApiService {
 
 	/**
 	 * @return list of solar systems used for the faction warfare
+	 * @throws ApiException
 	 */
 	FacWarSystems getFactionWarfareSystems() throws ApiException;
 

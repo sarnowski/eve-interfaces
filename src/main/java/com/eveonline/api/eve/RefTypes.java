@@ -15,15 +15,26 @@
  */
 package com.eveonline.api.eve;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface RefType extends ApiResult {
+public interface RefTypes extends ApiListResult<RefTypes.RefType> {
 
-	int getRefTypeId();
+	interface RefType extends ApiResult {
 
-	String getRefTypeName();
+		/**
+		 * @return the RefType's ID
+		 */
+		long getId();
+
+		/**
+		 * @return the RefType's name
+		 */
+		String getName();
+
+	}
 
 }

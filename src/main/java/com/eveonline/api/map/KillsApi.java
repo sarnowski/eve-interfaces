@@ -25,6 +25,7 @@ public interface KillsApi extends ApiService {
 
 	/**
 	 * @return returns a list of solar system's and their kills
+	 * @throws ApiException
 	 */
 	Kills getKills() throws ApiException;
 

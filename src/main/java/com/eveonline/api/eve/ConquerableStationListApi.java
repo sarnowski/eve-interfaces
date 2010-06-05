@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.eve;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.exceptions.ApiException;
 
@@ -24,6 +23,10 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ConquerableStationListApi extends ApiService {
 
-	ApiListResult<ConquerableStation> getConquerableStations() throws ApiException;
+	/**
+	 * @return a list of all ocnquereable stations and their status
+	 * @throws ApiException
+	 */
+	ConquerableStationList getConquerableStations() throws ApiException;
 
 }

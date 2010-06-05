@@ -17,55 +17,110 @@ package com.eveonline.api.eve;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
+import com.eveonline.constants.SkillAttribute;
+import com.eveonline.constants.SkillLevel;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface SkillTree extends ApiResult {
+public interface SkillTree extends ApiListResult<SkillTree.Group> {
 
-	String getGroupName();
+	interface Group extends ApiResult {
 
-	String getGroupId();
+		/**
+		 * @return the group's ID
+		 */
+		long getId();
 
-	ApiListResult<Skill> getSkills();
+		/**
+		 * @return the group's name
+		 */
+		String getName();
+
+		/**
+		 * @return a list of all skills in this group
+		 */
+		ApiListResult<Skill> getSkills();
+
+	}
 
 
 	interface Skill extends ApiResult {
 
-		int getTypeId();
+		/**
+		 * @return the skill's typeID
+		 */
+		long getTypeId();
 
-		String getTypeName();
+		/**
+		 * @return the skill's name
+		 */
+		String getName();
 
-		int getGroupId();
+		/**
+		 * @return the skill's group ID
+		 */
+		long getGroupId();
 
+		/**
+		 * @return the skill's description
+		 */
 		String getDescription();
 
+		/**
+		 * @return the skill's rank
+		 */
 		int getRank();
 
+		/**
+		 * @return required skills to learn this skill
+		 */
 		ApiListResult<RequiredSkill> getRequiredSkills();
 
-		String getPrimaryAttribute();
+		/**
+		 * @return the primary attribute
+		 */
+		SkillAttribute getPrimaryAttribute();
 
-		String getSecondaryAttribute();
+		/**
+		 * @return the secondary attribute
+		 */
+		SkillAttribute getSecondaryAttribute();
 
+		/**
+		 * @return the list of bonuses
+		 */
 		ApiListResult<SkillBonus> getSkillBonusCollection();
 
 
-		interface RequiredSkill extends ApiResult {
+	}
 
-			int getTypeId();
+	interface SkillBonus extends ApiResult {
 
-			int getSkillLevel();
+		/**
+		 * @return the bonus' type
+		 */
+		String getType();
 
-		}
+		/**
+		 * @return the bonus' value
+		 */
+		String getValue();
 
-		interface SkillBonus extends ApiResult {
+	}
 
-			String getBonusType();
+	interface RequiredSkill extends ApiResult {
 
-			String getBonusValue();
+		/**
+		 * @return the skill's typeID
+		 */
+		long getTypeId();
 
-		}
+		/**
+		 * @return the skill's level 
+		 */
+		SkillLevel getLevel();
+
 	}
 
 }

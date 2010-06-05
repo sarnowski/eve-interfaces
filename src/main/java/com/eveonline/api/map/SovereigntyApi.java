@@ -25,6 +25,7 @@ public interface SovereigntyApi extends ApiService {
 
 	/**
 	 * @return a list of solar system's with their owners
+	 * @throws ApiException
 	 */
 	Sovereignty getSovereignty() throws ApiException;
 

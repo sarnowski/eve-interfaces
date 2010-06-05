@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.eve;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.exceptions.ApiException;
 
@@ -24,6 +23,10 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ErrorListApi extends ApiService {
 
-	ApiListResult<Error> getErrors() throws ApiException;
+	/**
+	 * @return a list of all server errors which can occur
+	 * @throws ApiException
+	 */
+	ErrorList getErrorList() throws ApiException;
 
 }
