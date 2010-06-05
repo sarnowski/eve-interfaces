@@ -22,11 +22,23 @@ import com.eveonline.api.DirectorApiKey;
 
 /**
  * @author Tobias Sarnowski
+ * @author Dominik Eckelmann
  */
 public interface KillLogApi extends ApiService {
 
-	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, int characterId);
+    /**
+     * @param key           EVE-Api credentials.
+     * @param characterId   characterID from the CEO.
+     * @return 100 most recent kill log entries.
+     */
+	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId);
 
-	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, int characterId, int beforeKillId);
+    /**
+     * @param key           EVE-Api credentials.
+     * @param characterId   characterID from the CEO.
+     * @param beforeKillId  A killId to start from.
+     * @return 100 most recent kill log entries starting from beforeKillId.
+     */
+	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId, long beforeKillId);
 
 }
