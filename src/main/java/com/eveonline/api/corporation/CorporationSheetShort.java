@@ -28,7 +28,7 @@ public interface CorporationSheetShort extends ApiResult {
     /**
      * @return the corporation id.
      */
-    long getCorporationID();
+    long getId();
 
     /**
      * @return the corporation name.

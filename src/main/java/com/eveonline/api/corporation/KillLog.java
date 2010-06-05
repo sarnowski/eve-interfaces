@@ -33,7 +33,7 @@ public interface KillLog extends ApiResult {
      * You can use this id as beforeKillId in {@link KillLogApi#getKillLogs(com.eveonline.api.DirectorApiKey, long, long)}.
      * @return unique id of the kill.
      */
-	long getKillId();
+	long getId();
 
     /**
      * @return The ID of the solar system the kill occurred in.

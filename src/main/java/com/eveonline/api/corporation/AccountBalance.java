@@ -26,7 +26,7 @@ public interface AccountBalance extends ApiResult {
     /**
      * @return ID of the account.
      */
-	long getAccountId();
+	long getId();
 
     /**
      * @return Account identifier of corporation wallet division.
