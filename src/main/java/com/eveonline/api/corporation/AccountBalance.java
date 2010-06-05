@@ -18,8 +18,6 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiResult;
 
-import java.math.BigDecimal;
-
 /**
  * @author Dominik Eckelmann
  */
@@ -38,6 +36,6 @@ public interface AccountBalance extends ApiResult {
     /**
      * @return Amount of ISK on the wallet. 
      */
-	BigDecimal getBalance();
+	long getBalance();
 
 }
