@@ -30,5 +30,5 @@ public interface ContainerLogApi extends ApiService {
      * @param characterId   Character ID from a character in the corporation.
      * @return Container logs.
      */
-    ApiListResult<ContainerLog> getContainerLog(FullApiKey apiKey, int characterId);
+    ApiListResult<ContainerLog> getContainerLog(FullApiKey apiKey, long characterId);
 }

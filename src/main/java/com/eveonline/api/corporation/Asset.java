@@ -28,17 +28,17 @@ public interface Asset extends ApiResult {
     /**
      * @return ID of the Item.
      */
-	int getItemId();
+	long getItemId();
 
     /**
      * @return type ID of the item. References to invTypes database table.
      */
-	int getTypeId();
+	long getTypeId();
 
     /**
      * @return Number of items in the stack.
      */
-	int getQuantity();
+	long getQuantity();
 
     /*
      * @return Storage location.
@@ -59,7 +59,7 @@ public interface Asset extends ApiResult {
         /**
          * @return References to a solar system or a station.
          */
-		int getLocationId();
+		long getLocationId();
 
         /**
          * @return the Assets contained in the container.

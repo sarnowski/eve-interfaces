@@ -33,6 +33,6 @@ public interface ContactListApi extends ApiService {
      * @param characterId   CharacterId of a character in the corporation.
      * @return Contact list of corporation from the given character. 
      */
-	Contact.ContactList getContactList(FullApiKey apiKey, int characterId);
+	Contact.ContactList getContactList(FullApiKey apiKey, long characterId);
 
 }

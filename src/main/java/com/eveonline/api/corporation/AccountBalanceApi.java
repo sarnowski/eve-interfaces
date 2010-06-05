@@ -32,5 +32,5 @@ public interface AccountBalanceApi extends ApiService {
      *
      * @return Account balances of every division from a corporation.
      */
-    ApiListResult<AccountBalance> getAccountBalances(FullApiKey key, int characterId);
+    ApiListResult<AccountBalance> getAccountBalances(FullApiKey key, long characterId);
 }

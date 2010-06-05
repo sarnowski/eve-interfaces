@@ -28,35 +28,35 @@ public interface Job extends ApiResult {
     /**
      * @return Unique id of the Job.
      */
-    int getJobId();
+    long getJobId();
 
     /**
      * A AssemblyLineId is unique and won't change for station assembly lines.
      * On mobile assembly lines the id changes by repackage and reinstall the assembly line.
      * @return Id of the assembly line the job is installed to.
      */
-    int getAssemblyLineId();
+    long getAssemblyLineId();
 
     /**
      * @return if the container is a station the station id. if it's a pos module the item id.
      * @see {@link Job#getContainerTypeId()} to determine if the container is a station. 
      */
-    int getContainerId();
+    long getContainerId();
 
     /**
      * @return Blueprint itemID.
      */
-    int getInstalledItemId();
+    long getInstalledItemId();
 
     /**
      * @return location id from witch the blueprint was installed.
      */
-    int getInstalledItemLocationID();
+    long getInstalledItemLocationID();
 
     /**
      * @return number of entered blueprints.
      */
-    int getInstalledItemQuantity();
+    long getInstalledItemQuantity();
 
     /**
      * @return Starting PL of blueprint.
@@ -76,12 +76,12 @@ public interface Job extends ApiResult {
     /**
      * @return Destination hangar for product.
      */
-    int getOutputLocationId();
+    long getOutputLocationId();
 
     /**
      * @return character id from the installer.
      */
-    int getInstallerID();
+    long getInstallerID();
 
     /**
      * @return Number of runs for this job.
@@ -96,12 +96,12 @@ public interface Job extends ApiResult {
     /**
      * @return ID for the solar system the job is installed. See mapSolarSystems Table.
      */
-    int getInstalledInSolarSystemId();
+    long getInstalledInSolarSystemId();
 
     /**
      * @return solar system id.
      */
-    int getContainerLocationId();
+    long getContainerLocationId();
 
     /**
      * Modifier for amount of materials required over standard BPO/C listing,
@@ -130,17 +130,17 @@ public interface Job extends ApiResult {
     /**
      * @return Typeid of the blueprint.
      */
-    int getInstalledItemTypeId();
+    long getInstalledItemTypeId();
 
     /**
      * @return products typeId.
      */
-    int getOutputTypeId();
+    long getOutputTypeId();
 
     /**
      * @return Container id. see invTypes.
      */
-    int getContainerTypeId();
+    long getContainerTypeId();
 
     /**
      * @return true if it is a BPC false on BPO
@@ -170,7 +170,7 @@ public interface Job extends ApiResult {
     /**
      * @return Activity id of the job. see http://wiki.eve-id.net/TL2MaterialsActivity
      */
-    int getActivityId();
+    long getActivityId();
 
     /**
      * @return Completion status - only matters if {@link Job#isCompleted()} returns true

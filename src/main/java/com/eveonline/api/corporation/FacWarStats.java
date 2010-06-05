@@ -28,7 +28,7 @@ public interface FacWarStats extends ApiResult{
     /**
      * @return ID of the faction the corporation is enlisted to.
      */
-    int getFactionId();
+    long getFactionId();
 
     /**
      * @return Name of the faction the corporation is enlisted to.

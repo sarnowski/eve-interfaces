@@ -29,12 +29,12 @@ public interface CorporationSheetApi extends ApiService {
      * @param characterId Character of the corporation you want the sheet from.
      * @return a corporation sheet.
      */
-    CorporationSheet getCorporationSheet(LimitedApiKey apiKey, int characterId);
+    CorporationSheet getCorporationSheet(LimitedApiKey apiKey, long characterId);
 
     /**
      * @param apiKey            Limited API key.
      * @param corporationId     Id of the corporation to get the sheet from.
      * @return a corporation sheet from another corporation.
      */
-    CorporationSheetShort getCorporationSheetShort(LimitedApiKey apiKey, int corporationId);
+    CorporationSheetShort getCorporationSheetShort(LimitedApiKey apiKey, long corporationId);
 }

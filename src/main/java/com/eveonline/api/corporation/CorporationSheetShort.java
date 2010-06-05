@@ -28,7 +28,7 @@ public interface CorporationSheetShort extends ApiResult {
     /**
      * @return the corporation id.
      */
-    int getCorporationID();
+    long getCorporationID();
 
     /**
      * @return the corporation name.
@@ -43,7 +43,7 @@ public interface CorporationSheetShort extends ApiResult {
     /**
      * @return Character id of the CEO.
      */
-    int getCeoId();
+    long getCeoId();
 
     /**
      * @return Name of the CEO.
@@ -53,7 +53,7 @@ public interface CorporationSheetShort extends ApiResult {
     /**
      * @return HQ station id.
      */
-    int getStationId();
+    long getStationId();
 
     /**
      * @return HQ station name.
@@ -108,37 +108,37 @@ public interface CorporationSheetShort extends ApiResult {
         /**
          * @return Corporation ID of the member corporation.
          */
-        int getGraphicID();
+        long getGraphicID();
 
         /**
          * @return shape ID
          */
-        int getShape1();
+        long getShape1();
 
         /**
          * @return shape ID
          */
-        int getShape2();
+        long getShape2();
 
         /**
          * @return shape ID
          */
-        int getShape3();
+        long getShape3();
 
         /**
          * @return color ID
          */
-        int getColor1();
+        long getColor1();
 
         /**
          * @return color ID
          */
-        int getColor2();
+        long getColor2();
 
         /**
          * @return color ID
          */
-        int getColor3();
+        long getColor3();
     }
 
 }

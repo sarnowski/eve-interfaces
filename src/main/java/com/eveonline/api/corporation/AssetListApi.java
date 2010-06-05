@@ -34,6 +34,6 @@ public interface AssetListApi extends ApiService {
      * @param characterId   Character ID of the director/CEO
      * @return Container with all Assets from the corporation. 
      */
-	ApiListResult<Asset.Container> getAssets(DirectorApiKey key, int characterId);
+	ApiListResult<Asset.Container> getAssets(DirectorApiKey key, long characterId);
 
 }

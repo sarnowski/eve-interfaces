@@ -33,17 +33,17 @@ public interface ContainerLog extends ApiResult{
     /**
      * @return Item the entry belongs to.
      */
-    int getItemId();
+    long getItemId();
 
     /**
      * @return Item type ID.
      */
-    int getItemTypeId();
+    long getItemTypeId();
 
     /**
      * @return ID of the character that made the change.
      */
-    int getActorId();
+    long getActorId();
 
     /**
      * @return Name of the character that made the change. 
@@ -59,7 +59,7 @@ public interface ContainerLog extends ApiResult{
     /**
      * @return Location ID of the container the log belongs to.
      */
-    int getLocationId();
+    long getLocationId();
 
     /**
      * @return What happened to the container.
@@ -74,12 +74,12 @@ public interface ContainerLog extends ApiResult{
     /**
      * @return the container item type ID.
      */
-    int getTypeId();
+    long getTypeId();
 
     /**
      * @return Quantity of modified items.
      */
-    int getQuantity();
+    long getQuantity();
 
     /**
      * @return new Flag option?

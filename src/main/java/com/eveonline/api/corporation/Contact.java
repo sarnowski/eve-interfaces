@@ -28,7 +28,7 @@ public interface Contact extends ApiResult {
     /**
      * @return Contact ID - depending on the contact list.
      */
-	int getContactId();
+	long getContactId();
 
     /**
      * @return The contact's name.

@@ -30,5 +30,5 @@ public interface FacWarStatsApi extends ApiService{
      * @param characterId   Character ID of a character in the corporation to get the information from.
      * @return Faction Warfare Statistics or Error 125 if the corporation is not enlisted.
      */
-    FacWarStats getFacWarStats(LimitedApiKey apiKey, int characterId );
+    FacWarStats getFacWarStats(LimitedApiKey apiKey, long characterId );
 }
