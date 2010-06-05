@@ -28,10 +28,9 @@ import com.eveonline.api.exceptions.ApiException;
 public interface MarketOrdersApi extends ApiService {
 
     /**
-     *
-     * @param apiKey Api Credentials
-     * @param characterId characterID of character with Junior Accountant, Trader or higher role in corporation.
-     * @return
+     * @param apiKey        Api Credentials
+     * @param characterId   characterID of character with Junior Accountant, Trader or higher role in corporation.
+     * @return List of active and expired market orders. maximum time for expired orders is one week. 
      */
-    ApiListResult<Orders> getOrders(FullApiKey apiKey, int characterId) throws ApiException;
+    ApiListResult<MarketOrder> getOrders(FullApiKey apiKey, long characterId) throws ApiException;
 }
