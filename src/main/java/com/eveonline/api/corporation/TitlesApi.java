@@ -19,7 +19,14 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface TitlesApi extends ApiService{
-    ApiListResult<ExtendedTitle> getTitles(FullApiKey apiKey, int characterId);
+
+    ApiListResult<ExtendedTitle> getTitles(FullApiKey apiKey, int characterId) throws ApiException;
+	
 }

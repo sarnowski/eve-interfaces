@@ -17,12 +17,13 @@ package com.eveonline.api.character;
 
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface MedalsApi extends ApiService {
 
-	Medals getMedals(FullApiKey key, int characterId);
+	Medals getMedals(FullApiKey key, int characterId) throws ApiException;
 
 }

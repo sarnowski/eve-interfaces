@@ -18,10 +18,10 @@ package com.eveonline.api.character;
 import com.eveonline.api.ApiService;
 
 /**
+ * TODO Not yet implemented
+ *
  * @author Tobias Sarnowski
  */
 public interface UpcomingCalendarEventsApi extends ApiService {
-
-	// TODO
 
 }

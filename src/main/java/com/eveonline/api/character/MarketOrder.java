@@ -23,7 +23,7 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface MarktOrder extends ApiResult {
+public interface MarketOrder extends ApiResult {
 
 	int getOrderId();
 

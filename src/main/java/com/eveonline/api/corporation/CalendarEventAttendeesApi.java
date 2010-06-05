@@ -18,5 +18,11 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiService;
 
+/**
+ * TODO Not yet implemented
+ *
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface CalendarEventAttendeesApi extends ApiService {
 }

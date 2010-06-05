@@ -16,6 +16,7 @@
 package com.eveonline.api.map;
 
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
@@ -25,6 +26,6 @@ public interface JumpsApi extends ApiService {
 	/**
 	 * @return a list of all systems with a minimum of one jump
 	 */
-	Jumps getJumps();
+	Jumps getJumps() throws ApiException;
 
 }

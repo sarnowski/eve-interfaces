@@ -19,9 +19,11 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
 public interface AccountBalanceApi extends ApiService {
 
@@ -32,5 +34,5 @@ public interface AccountBalanceApi extends ApiService {
      *
      * @return Account balances of every division from a corporation.
      */
-    ApiListResult<AccountBalance> getAccountBalances(FullApiKey key, long characterId);
+    ApiListResult<AccountBalance> getAccountBalances(FullApiKey key, long characterId) throws ApiException;
 }

@@ -18,12 +18,13 @@ package com.eveonline.api.character;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface NotificationsApi extends ApiService {
 
-	ApiListResult<Notification> getNotifications(FullApiKey key, int characterId);
+	ApiListResult<Notification> getNotifications(FullApiKey key, int characterId) throws ApiException;
 
 }

@@ -19,8 +19,13 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface MemberSecurityApi extends ApiService{
 
-    ApiListResult<Roles> getRoles(DirectorApiKey apiKey, int characterId);
+    ApiListResult<Roles> getRoles(DirectorApiKey apiKey, int characterId) throws ApiException;
 }

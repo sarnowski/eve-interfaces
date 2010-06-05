@@ -18,7 +18,14 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface StandingsApi extends ApiService{
-    Standings getStandings(DirectorApiKey apiKey, int characterId);
+
+    Standings getStandings(DirectorApiKey apiKey, int characterId) throws ApiException;
+	
 }

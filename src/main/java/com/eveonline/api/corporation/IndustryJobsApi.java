@@ -19,9 +19,11 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
 public interface IndustryJobsApi extends ApiService {
 
@@ -30,5 +32,5 @@ public interface IndustryJobsApi extends ApiService {
      * @param characterId characterID of a character that must have the role 'Factory Manager'.
      * @return Industry jobs.
      */
-    ApiListResult<IndustryJob> getJobs(FullApiKey apiKey, long characterId);
+    ApiListResult<IndustryJob> getJobs(FullApiKey apiKey, long characterId) throws ApiException;
 }

@@ -17,12 +17,13 @@ package com.eveonline.api.eve;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface CharacterIdApi extends ApiService {
 
-	ApiListResult<CharacterId> getCharacterIds(Iterable<String> names);
+	ApiListResult<CharacterId> getCharacterIds(Iterable<String> names) throws ApiException;
 
 }

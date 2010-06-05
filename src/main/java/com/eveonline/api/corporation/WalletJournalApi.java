@@ -19,9 +19,14 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 import java.math.BigInteger;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface WalletJournalApi extends ApiService {
     /**
      * @param apiKey api credentials
@@ -29,7 +34,7 @@ public interface WalletJournalApi extends ApiService {
      * @param accountKey Use /corp/AccountBalance.xml.aspx to determine which accountKey corresponds to each corporate wallet.
      * @return
      */
-    ApiListResult<WalletJournalEntry> getWalletJournal(FullApiKey apiKey, int characterId, int accountKey);
+    ApiListResult<WalletJournalEntry> getWalletJournal(FullApiKey apiKey, int characterId, int accountKey) throws ApiException;
 
     /**
      * @param apiKey api credentials
@@ -38,5 +43,5 @@ public interface WalletJournalApi extends ApiService {
      * @param beforeRefId Used for walking the journal backwards to get more entries; see Journal Walking, below. 
      * @return
      */
-    ApiListResult<WalletJournalEntry> getWalletJournal(FullApiKey apiKey, int characterId, int accountKey, BigInteger beforeRefId);
+    ApiListResult<WalletJournalEntry> getWalletJournal(FullApiKey apiKey, int characterId, int accountKey, BigInteger beforeRefId) throws ApiException;
 }

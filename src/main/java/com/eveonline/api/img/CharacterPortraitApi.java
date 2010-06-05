@@ -16,6 +16,7 @@
 package com.eveonline.api.img;
 
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 import java.io.InputStream;
 
@@ -29,7 +30,7 @@ public interface CharacterPortraitApi extends ApiService {
 	 * @param size Size can be 64x64px or 256x264px
 	 * @return a JPEG encoded image of the character
 	 */
-	InputStream getCharacterPortrait(long characterId, PortraitSize size);
+	InputStream getCharacterPortrait(long characterId, PortraitSize size) throws ApiException;
 
 
 	enum PortraitSize {

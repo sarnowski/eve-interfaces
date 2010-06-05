@@ -18,14 +18,15 @@ package com.eveonline.api.character;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface WalletTransactionsApi extends ApiService {
 
-	ApiListResult<WalletTransaction> getWalletTransactions(FullApiKey key, int characterId);
+	ApiListResult<WalletTransaction> getWalletTransactions(FullApiKey key, int characterId) throws ApiException;
 
-	ApiListResult<WalletTransaction> getWalletTransactions(FullApiKey key, int characterId, int beforeTransactionId);
+	ApiListResult<WalletTransaction> getWalletTransactions(FullApiKey key, int characterId, int beforeTransactionId) throws ApiException;
 
 }

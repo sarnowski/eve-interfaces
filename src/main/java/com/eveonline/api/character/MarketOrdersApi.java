@@ -17,12 +17,13 @@ package com.eveonline.api.character;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface MarketOrdersApi extends ApiService {
 
-	ApiListResult<MarktOrder> getMarketOrders();
+	ApiListResult<MarketOrder> getMarketOrders() throws ApiException;
 
 }

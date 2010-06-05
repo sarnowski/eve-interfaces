@@ -17,12 +17,13 @@ package com.eveonline.api.eve;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface SkillTreeApi extends ApiService {
 
-	ApiListResult<SkillTree> getSkillTree();
+	ApiListResult<SkillTree> getSkillTree() throws ApiException;
 
 }

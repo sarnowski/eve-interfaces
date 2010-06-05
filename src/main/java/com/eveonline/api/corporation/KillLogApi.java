@@ -19,6 +19,7 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
@@ -31,7 +32,7 @@ public interface KillLogApi extends ApiService {
      * @param characterId   characterID from the CEO.
      * @return 100 most recent kill log entries.
      */
-	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId);
+	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId) throws ApiException;
 
     /**
      * @param key           EVE-Api credentials.
@@ -39,6 +40,6 @@ public interface KillLogApi extends ApiService {
      * @param beforeKillId  A killId to start from.
      * @return 100 most recent kill log entries starting from beforeKillId.
      */
-	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId, long beforeKillId);
+	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId, long beforeKillId) throws ApiException;
 
 }

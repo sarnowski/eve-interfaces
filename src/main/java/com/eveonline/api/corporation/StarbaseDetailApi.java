@@ -17,7 +17,14 @@
 package com.eveonline.api.corporation;
 
 import com.eveonline.api.DirectorApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface StarbaseDetailApi {
-    StarbaseDetail getStarbaseDetail(DirectorApiKey apiKey, int characterId, int itemId);
+
+    StarbaseDetail getStarbaseDetail(DirectorApiKey apiKey, int characterId, int itemId) throws ApiException;
+	
 }

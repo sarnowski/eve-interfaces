@@ -22,9 +22,11 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
 public interface ContactListApi extends ApiService {
 
@@ -33,6 +35,6 @@ public interface ContactListApi extends ApiService {
      * @param characterId   CharacterId of a character in the corporation.
      * @return Contact list of corporation from the given character. 
      */
-	Contact.ContactList getContactList(FullApiKey apiKey, long characterId);
+	Contact.ContactList getContactList(FullApiKey apiKey, long characterId) throws ApiException;
 
 }

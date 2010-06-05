@@ -19,8 +19,13 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface ShareholdersApi extends ApiService{
 
-    ApiListResult<Shareholders> getShareholders(DirectorApiKey apiKey, int characterId);
+    ApiListResult<Shareholders> getShareholders(DirectorApiKey apiKey, int characterId) throws ApiException;
 }

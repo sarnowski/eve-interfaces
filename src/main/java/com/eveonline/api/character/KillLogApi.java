@@ -18,14 +18,15 @@ package com.eveonline.api.character;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface KillLogApi extends ApiService {
 
-	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId);
+	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId) throws ApiException;
 
-	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId, int beforeKillId);
+	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId, int beforeKillId) throws ApiException;
 
 }

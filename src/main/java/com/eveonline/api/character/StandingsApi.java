@@ -17,12 +17,13 @@ package com.eveonline.api.character;
 
 import com.eveonline.api.ApiService;
 import com.eveonline.api.LimitedApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface StandingsApi extends ApiService {
 
-	Standings getStandings(LimitedApiKey key, int characterId);
+	Standings getStandings(LimitedApiKey key, int characterId) throws ApiException;
 
 }

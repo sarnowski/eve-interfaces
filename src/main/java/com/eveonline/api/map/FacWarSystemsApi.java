@@ -16,6 +16,7 @@
 package com.eveonline.api.map;
 
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
@@ -25,6 +26,6 @@ public interface FacWarSystemsApi extends ApiService {
 	/**
 	 * @return list of solar systems used for the faction warfare
 	 */
-	FacWarSystems getFactionWarfareSystems();
+	FacWarSystems getFactionWarfareSystems() throws ApiException;
 
 }

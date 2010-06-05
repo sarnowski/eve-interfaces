@@ -18,12 +18,13 @@ package com.eveonline.api.character;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
  */
 public interface MailingListsApi extends ApiService {
 
-	ApiListResult<MailingList> getMailingLists(FullApiKey key, int characterId);
+	ApiListResult<MailingList> getMailingLists(FullApiKey key, int characterId) throws ApiException;
 
 }

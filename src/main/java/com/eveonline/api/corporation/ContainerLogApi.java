@@ -19,9 +19,11 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
 public interface ContainerLogApi extends ApiService {
 
@@ -30,5 +32,5 @@ public interface ContainerLogApi extends ApiService {
      * @param characterId   Character ID from a character in the corporation.
      * @return Container logs.
      */
-    ApiListResult<ContainerLog> getContainerLog(FullApiKey apiKey, long characterId);
+    ApiListResult<ContainerLog> getContainerLog(FullApiKey apiKey, long characterId) throws ApiException;
 }

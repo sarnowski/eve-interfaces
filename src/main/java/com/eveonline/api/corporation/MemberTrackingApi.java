@@ -19,9 +19,14 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 import com.eveonline.api.DirectorApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface MemberTrackingApi extends ApiResult{
 
-    ApiListResult<Member> getMembers(DirectorApiKey apiKey, int characterId);
+    ApiListResult<Member> getMembers(DirectorApiKey apiKey, int characterId) throws ApiException;
 
 }

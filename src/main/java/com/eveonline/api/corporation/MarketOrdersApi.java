@@ -19,7 +19,12 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface MarketOrdersApi extends ApiService {
 
     /**
@@ -28,5 +33,5 @@ public interface MarketOrdersApi extends ApiService {
      * @param characterId characterID of character with Junior Accountant, Trader or higher role in corporation.
      * @return
      */
-    ApiListResult<Orders> getOrders(FullApiKey apiKey, int characterId);
+    ApiListResult<Orders> getOrders(FullApiKey apiKey, int characterId) throws ApiException;
 }

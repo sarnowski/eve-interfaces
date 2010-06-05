@@ -16,5 +16,11 @@
 
 package com.eveonline.api.corporation;
 
+/**
+ * TODO Not yet implemented
+ * 
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface OutpostListApi {
 }

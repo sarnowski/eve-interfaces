@@ -16,6 +16,7 @@
 package com.eveonline.api.map;
 
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
@@ -25,6 +26,6 @@ public interface KillsApi extends ApiService {
 	/**
 	 * @return returns a list of solar system's and their kills
 	 */
-	Kills getKills();
+	Kills getKills() throws ApiException;
 
 }

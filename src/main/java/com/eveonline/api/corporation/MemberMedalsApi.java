@@ -18,8 +18,13 @@ package com.eveonline.api.corporation;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.LimitedApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
 public interface MemberMedalsApi {
 
-    ApiListResult<IssuedMedals> getIssuedMedals(LimitedApiKey apiKey, int characterId);
+    ApiListResult<IssuedMedals> getIssuedMedals(LimitedApiKey apiKey, int characterId) throws ApiException;
 }

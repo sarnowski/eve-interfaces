@@ -16,6 +16,7 @@
 package com.eveonline.api.eve;
 
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
@@ -25,6 +26,6 @@ public interface AllianceListApi extends ApiService {
     /**
      * @return a list of all alliances
      */
-	AllianceList getAllianceList();
+	AllianceList getAllianceList() throws ApiException;
 
 }

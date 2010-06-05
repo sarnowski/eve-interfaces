@@ -23,9 +23,11 @@ package com.eveonline.api.corporation;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
 public interface AssetListApi extends ApiService {
 
@@ -34,6 +36,6 @@ public interface AssetListApi extends ApiService {
      * @param characterId   Character ID of the director/CEO
      * @return Container with all Assets from the corporation. 
      */
-	ApiListResult<Asset.Container> getAssets(DirectorApiKey key, long characterId);
+	ApiListResult<Asset.Container> getAssets(DirectorApiKey key, long characterId) throws ApiException;
 
 }

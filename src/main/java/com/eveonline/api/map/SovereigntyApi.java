@@ -16,6 +16,7 @@
 package com.eveonline.api.map;
 
 import com.eveonline.api.ApiService;
+import com.eveonline.api.exceptions.ApiException;
 
 /**
  * @author Tobias Sarnowski
@@ -25,6 +26,6 @@ public interface SovereigntyApi extends ApiService {
 	/**
 	 * @return a list of solar system's with their owners
 	 */
-	Sovereignty getSovereignty();
+	Sovereignty getSovereignty() throws ApiException;
 
 }
