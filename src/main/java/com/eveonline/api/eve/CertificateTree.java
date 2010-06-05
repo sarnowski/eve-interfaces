@@ -25,10 +25,19 @@ public interface CertificateTree extends ApiListResult<CertificateTree.Category>
 
     interface Category extends ApiResult {
 
-        int getCategoryId();
+	    /**
+	     * @return the category's ID
+	     */
+        long getId();
 
-        String getCategoryName();
+	    /**
+	     * @return the category's name
+	     */
+        String getName();
 
+	    /**
+	     * @return classes of certificates in this category
+	     */
         ApiListResult<Classes> getClasses();
         
     }
@@ -36,42 +45,81 @@ public interface CertificateTree extends ApiListResult<CertificateTree.Category>
 
     interface Classes extends ApiResult {
 
-        int getClassId();
+	    /**
+	     * @return the class's ID
+	     */
+        long getId();
 
-        String getClassName();
+	    /**
+	     * @return the class's name
+	     */
+        String getName();
 
+	    /**
+	     * @return all certificate's beloning to this class
+	     */
         ApiListResult<Certificate> getCertificates();
 
     }
 
     interface Certificate extends ApiResult {
 
-        int getCertificateId();
+	    /**
+	     * @return the certificate's ID
+	     */
+        long getId();
 
+	    /**
+	     * @return the certificate's grade
+	     */
         int getGrade();
 
-        int getCorporationId();
+	    /**
+	     * @return the corporation's ID
+	     */
+        long getCorporationId();
 
+	    /**
+	     * @return the certificate's description
+	     */
         String getDescription();
 
+	    /**
+	     * @return the list of required skills to fulfill the certificate
+	     */
         ApiListResult<RequiredSkill> getRequiredSkills();
 
+	    /**
+	     * @return the list of required certificates to fulfill the certitifate
+	     */
         ApiListResult<RequiredCertificate> getRequiredCertificates();
 
     }
 
     interface RequiredSkill extends ApiResult {
 
-        int getTypeId();
+	    /**
+	     * @return the typeID of the skill
+	     */
+        long getTypeId();
 
+	    /**
+	     * @return the required level
+	     */
         int getLevel();
 
     }
 
     interface RequiredCertificate extends ApiResult {
 
-        int getCertificateId();
+	    /**
+	     * @return the certificate's ID
+	     */
+        long getId();
 
+	    /**
+	     * @return the required grade
+	     */
         int getGrade();
 
     }
