@@ -28,7 +28,7 @@ public interface Asset extends ApiResult {
     /**
      * @return ID of the Item.
      */
-	long getItemId();
+	long getId();
 
     /**
      * @return type ID of the item. References to invTypes database table.

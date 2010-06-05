@@ -20,14 +20,33 @@ import com.eveonline.api.ApiResult;
 
 import java.util.Date;
 
-public interface Medals extends ApiResult {
-    int getMedalId();
+/**
+ * @author Dominik Eckelmann
+ */
+public interface Medal extends ApiResult {
 
+    /**
+     * @return unique id for the medal.
+     */
+    long getId();
+
+    /**
+     * @return In-game display title.
+     */
     String getTitle();
 
+    /**
+     * @return Description what the medal is for.
+     */
     String getDescription();
 
-    int getCreatorId();
+    /**
+     * @return Creator character of the medal.
+     */
+    long getCreatorId();
 
+    /**
+     * @return date of creation.
+     */
     Date getCreated();
 }

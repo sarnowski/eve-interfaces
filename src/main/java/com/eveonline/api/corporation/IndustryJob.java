@@ -28,7 +28,7 @@ public interface IndustryJob extends ApiResult {
     /**
      * @return Unique id of the IndustryJob.
      */
-    long getJobId();
+    long getId();
 
     /**
      * A AssemblyLineId is unique and won't change for station assembly lines.
