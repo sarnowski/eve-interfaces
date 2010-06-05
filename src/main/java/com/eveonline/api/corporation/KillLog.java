@@ -197,7 +197,7 @@ public interface KillLog extends ApiResult {
 		long getAllianceId();
 
         /**
-         * @return total ammount of taken damage.
+         * @return total amount of taken damage.
          */
 		long getDamageTaken();
 
