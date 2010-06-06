@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ServerStatusApi extends ApiService {
 
+	public static final String XMLPATH = "/server/ServerStatus.xml.aspx";
+
+
 	/**
 	 * @return informations about the current server's status
 	 * @throws ApiException

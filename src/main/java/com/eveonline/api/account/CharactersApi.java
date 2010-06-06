@@ -24,6 +24,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface CharactersApi extends ApiService {
 
+	public static final String XMLPATH = "/account/Characters.xml.aspx";
+
+
 	/**
 	 * @param key limited api key
 	 * @return the list of all characters of the key's account
