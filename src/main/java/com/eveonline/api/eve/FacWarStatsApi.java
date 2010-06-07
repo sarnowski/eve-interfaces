@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface FacWarStatsApi extends ApiService {
 
+	public static final String XMLPATH = "/eve/FacWarStats.xml.aspx";
+
+
 	/**
 	 * @return faction warfare statistics
 	 * @throws ApiException

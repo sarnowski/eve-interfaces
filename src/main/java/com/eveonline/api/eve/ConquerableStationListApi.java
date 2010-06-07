@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ConquerableStationListApi extends ApiService {
 
+	public static final String XMLPATH = "/eve/ConquerableStationList.xml.aspx";
+
+
 	/**
 	 * @return a list of all ocnquereable stations and their status
 	 * @throws ApiException

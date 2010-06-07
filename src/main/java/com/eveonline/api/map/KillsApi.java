@@ -22,6 +22,9 @@ import com.eveonline.api.exceptions.ApiException;
  * @author Tobias Sarnowski
  */
 public interface KillsApi extends ApiService {
+	
+	public static final String XMLPATH = "/map/Kills.xml.aspx";
+
 
 	/**
 	 * @return returns a list of solar system's and their kills

@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface CertificateTreeApi extends ApiService {
 
+	public static final String XMLPATH = "/eve/CertificateTree.xml.aspx";
+
+
     /**
      * @return a list of all certificates, grouped by categories and classes
      * @throws ApiException

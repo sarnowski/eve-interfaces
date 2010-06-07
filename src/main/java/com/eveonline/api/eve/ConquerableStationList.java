@@ -21,7 +21,7 @@ import com.eveonline.api.ApiResult;
 /**
  * @author Tobias Sarnowski
  */
-public interface ConquerableStationList extends ApiListResult<ConquerableStationList.ConquerableStation> {
+public interface ConquerableStationList<S extends ConquerableStationList.ConquerableStation> extends ApiListResult<S> {
 
 	interface ConquerableStation extends ApiResult {
 

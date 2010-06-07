@@ -31,12 +31,12 @@ public interface FacWarStats extends ApiResult {
 	/**
 	 * @return a list of all factions in the war
 	 */
-	ApiListResult<Faction> getFactions();
+	ApiListResult<? extends Faction> getFactions();
 
 	/**
 	 * @return a list of all wars
 	 */
-	ApiListResult<FactionWar> getFactionWars();
+	ApiListResult<? extends FactionWar> getFactionWars();
 
 
 	interface Totals extends ApiResult {

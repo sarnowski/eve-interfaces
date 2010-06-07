@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface SovereigntyApi extends ApiService {
 
+	public static final String XMLPATH = "/map/Sovereignty.xml.aspx";
+
+
 	/**
 	 * @return a list of solar system's with their owners
 	 * @throws ApiException

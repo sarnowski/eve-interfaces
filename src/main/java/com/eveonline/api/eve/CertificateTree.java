@@ -22,7 +22,7 @@ import com.eveonline.constants.SkillLevel;
 /**
  * @author Tobias Sarnowski
  */
-public interface CertificateTree extends ApiListResult<CertificateTree.Category> {
+public interface CertificateTree<C extends CertificateTree.Category> extends ApiListResult<C> {
 
     interface Category extends ApiResult {
 
@@ -39,7 +39,7 @@ public interface CertificateTree extends ApiListResult<CertificateTree.Category>
 	    /**
 	     * @return classes of certificates in this category
 	     */
-        ApiListResult<Classes> getClasses();
+        ApiListResult<? extends Classes> getClasses();
         
     }
 
@@ -59,7 +59,7 @@ public interface CertificateTree extends ApiListResult<CertificateTree.Category>
 	    /**
 	     * @return all certificate's beloning to this class
 	     */
-        ApiListResult<Certificate> getCertificates();
+        ApiListResult<? extends Certificate> getCertificates();
 
     }
 
@@ -88,12 +88,12 @@ public interface CertificateTree extends ApiListResult<CertificateTree.Category>
 	    /**
 	     * @return the list of required skills to fulfill the certificate
 	     */
-        ApiListResult<RequiredSkill> getRequiredSkills();
+        ApiListResult<? extends RequiredSkill> getRequiredSkills();
 
 	    /**
 	     * @return the list of required certificates to fulfill the certitifate
 	     */
-        ApiListResult<RequiredCertificate> getRequiredCertificates();
+        ApiListResult<? extends RequiredCertificate> getRequiredCertificates();
 
     }
 

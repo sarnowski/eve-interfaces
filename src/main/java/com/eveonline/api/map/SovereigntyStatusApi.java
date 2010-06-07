@@ -23,5 +23,7 @@ import com.eveonline.api.ApiService;
  * @author Tobias Sarnowski
  */
 public interface SovereigntyStatusApi extends ApiService {
+
+	public static final String XMLPATH = "/map/SovereigntyStatus.xml.aspx";
 	
 }

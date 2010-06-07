@@ -21,7 +21,7 @@ import com.eveonline.api.ApiResult;
 /**
  * @author Tobias Sarnowski
  */
-public interface CharacterName extends ApiListResult<CharacterName.Name> {
+public interface CharacterName<N extends CharacterName.Name> extends ApiListResult<N> {
 
 	interface Name extends ApiResult {
 

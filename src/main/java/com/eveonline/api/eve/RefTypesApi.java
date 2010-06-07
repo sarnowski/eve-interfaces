@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface RefTypesApi extends ApiService {
 
+	public static final String XMLPATH = "/eve/RefTypes.xml.aspx";
+
+
 	/**
 	 * @return a list of transaction types used in the Journal Entries
 	 * @throws ApiException

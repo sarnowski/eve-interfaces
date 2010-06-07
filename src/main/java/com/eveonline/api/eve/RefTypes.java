@@ -21,7 +21,7 @@ import com.eveonline.api.ApiResult;
 /**
  * @author Tobias Sarnowski
  */
-public interface RefTypes extends ApiListResult<RefTypes.RefType> {
+public interface RefTypes<R extends RefTypes.RefType> extends ApiListResult<R> {
 
 	interface RefType extends ApiResult {
 

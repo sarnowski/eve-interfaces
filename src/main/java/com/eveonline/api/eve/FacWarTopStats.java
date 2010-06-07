@@ -44,32 +44,32 @@ public interface FacWarTopStats extends ApiResult {
 		/**
 		 * @return top100 killers yesterday
 		 */
-		ApiListResult<TopKiller> getKillsYesterday();
+		ApiListResult<? extends TopKiller> getKillsYesterday();
 
 		/**
 		 * @return top100 killers last week
 		 */
-		ApiListResult<TopKiller> getKillsLastWeek();
+		ApiListResult<? extends TopKiller> getKillsLastWeek();
 
 		/**
 		 * @return top100 killers in total
 		 */
-		ApiListResult<TopKiller> getKillsTotal();
+		ApiListResult<? extends TopKiller> getKillsTotal();
 
 		/**
 		 * @return top100 victory point gainer yesterday
 		 */
-		ApiListResult<TopScorer> getVictoryPointsYesterday();
+		ApiListResult<? extends TopScorer> getVictoryPointsYesterday();
 
 		/**
 		 * @return top100 victory point gainer last week
 		 */
-		ApiListResult<TopScorer> getVictoryPointsLastWeek();
+		ApiListResult<? extends TopScorer> getVictoryPointsLastWeek();
 
 		/**
 		 * @return top100 victory point gainer in total
 		 */
-		ApiListResult<TopScorer> getVictoryTotal();
+		ApiListResult<? extends TopScorer> getVictoryTotal();
 
 	}
 
@@ -116,32 +116,32 @@ public interface FacWarTopStats extends ApiResult {
 		/**
 		 * @return top100 killer corporations yesterday
 		 */
-		ApiListResult<TopKillerCorporation> getKillsYesterday();
+		ApiListResult<? extends TopKillerCorporation> getKillsYesterday();
 
 		/**
 		 * @return top100 killer corporations last week
 		 */
-		ApiListResult<TopKillerCorporation> getKillsLastWeek();
+		ApiListResult<? extends TopKillerCorporation> getKillsLastWeek();
 
 		/**
 		 * @return top100 killer corporations in total
 		 */
-		ApiListResult<TopKillerCorporation> getKillsTotal();
+		ApiListResult<? extends TopKillerCorporation> getKillsTotal();
 
 		/**
 		 * @return top100 scorer corporations yesterday
 		 */
-		ApiListResult<TopScorerCorporation> getVictoryPointsYesterday();
+		ApiListResult<? extends TopScorerCorporation> getVictoryPointsYesterday();
 
 		/**
 		 * @return top100 scorer corporations last week
 		 */
-		ApiListResult<TopScorerCorporation> getVictoryPointsLastWeek();
+		ApiListResult<? extends TopScorerCorporation> getVictoryPointsLastWeek();
 
 		/**
 		 * @return top100 scorer corporations in total
 		 */
-		ApiListResult<TopScorerCorporation> getVictoryTotal();
+		ApiListResult<? extends TopScorerCorporation> getVictoryTotal();
 
 
 	}
@@ -189,32 +189,32 @@ public interface FacWarTopStats extends ApiResult {
 		/**
 		 * @return top killer factions yesterday
 		 */
-		ApiListResult<TopKillerFaction> getKillsYesterday();
+		ApiListResult<? extends TopKillerFaction> getKillsYesterday();
 
 		/**
 		 * @return top killer factions last week
 		 */
-		ApiListResult<TopKillerFaction> getKillsLastWeek();
+		ApiListResult<? extends TopKillerFaction> getKillsLastWeek();
 
 		/**
 		 * @return top killer factions in total
 		 */
-		ApiListResult<TopKillerFaction> getKillsTotal();
+		ApiListResult<? extends TopKillerFaction> getKillsTotal();
 
 		/**
 		 * @return top scorer factions yesterday
 		 */
-		ApiListResult<TopScorerFaction> getVictoryPointsYesterday();
+		ApiListResult<? extends TopScorerFaction> getVictoryPointsYesterday();
 
 		/**
 		 * @return top scorer factions last week
 		 */
-		ApiListResult<TopScorerFaction> getVictoryPointsLastWeek();
+		ApiListResult<? extends TopScorerFaction> getVictoryPointsLastWeek();
 
 		/**
 		 * @return top scorer factions in total
 		 */
-		ApiListResult<TopScorerFaction> getVictoryTotal();
+		ApiListResult<? extends TopScorerFaction> getVictoryTotal();
 
 
 		interface TopKillerFaction extends ApiResult {

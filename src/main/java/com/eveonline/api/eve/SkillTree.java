@@ -23,7 +23,7 @@ import com.eveonline.constants.SkillLevel;
 /**
  * @author Tobias Sarnowski
  */
-public interface SkillTree extends ApiListResult<SkillTree.Group> {
+public interface SkillTree<G extends SkillTree.Group> extends ApiListResult<G> {
 
 	interface Group extends ApiResult {
 
@@ -40,7 +40,7 @@ public interface SkillTree extends ApiListResult<SkillTree.Group> {
 		/**
 		 * @return a list of all skills in this group
 		 */
-		ApiListResult<Skill> getSkills();
+		ApiListResult<? extends Skill> getSkills();
 
 	}
 
@@ -75,7 +75,7 @@ public interface SkillTree extends ApiListResult<SkillTree.Group> {
 		/**
 		 * @return required skills to learn this skill
 		 */
-		ApiListResult<RequiredSkill> getRequiredSkills();
+		ApiListResult<? extends RequiredSkill> getRequiredSkills();
 
 		/**
 		 * @return the primary attribute
@@ -90,7 +90,7 @@ public interface SkillTree extends ApiListResult<SkillTree.Group> {
 		/**
 		 * @return the list of bonuses
 		 */
-		ApiListResult<SkillBonus> getSkillBonusCollection();
+		ApiListResult<? extends SkillBonus> getSkillBonusCollection();
 
 
 	}

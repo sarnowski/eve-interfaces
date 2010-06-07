@@ -21,7 +21,7 @@ import com.eveonline.api.ApiResult;
 /**
  * @author Tobias Sarnowski
  */
-public interface ErrorList extends ApiListResult<ErrorList.Error> {
+public interface ErrorList<E extends ErrorList.Error> extends ApiListResult<E> {
 
 	interface Error extends ApiResult {
 

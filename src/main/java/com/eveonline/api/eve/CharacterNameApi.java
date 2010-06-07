@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface CharacterNameApi extends ApiService {
 
+	public static final String XMLPATH = "/eve/CharacterName.xml.aspx";
+
+
 	/**
 	 * @param ids a list of IDs to resolve
 	 * @return the list of found names

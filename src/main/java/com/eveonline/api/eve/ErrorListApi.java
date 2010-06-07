@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ErrorListApi extends ApiService {
 
+	public static final String XMLPATH = "/eve/ErrorList.xml.aspx";
+
+
 	/**
 	 * @return a list of all server errors which can occur
 	 * @throws ApiException
