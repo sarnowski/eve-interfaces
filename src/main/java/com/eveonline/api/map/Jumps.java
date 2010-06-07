@@ -23,12 +23,13 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface Jumps extends ApiListResult<Jumps.SolarSystem> {
+public interface Jumps<S extends Jumps.SolarSystem> extends ApiListResult<S> {
 
 	/**
 	 * @return when the list data was recorded
 	 */
 	Date getDataTime();
+    
 
 	interface SolarSystem extends ApiResult {
 

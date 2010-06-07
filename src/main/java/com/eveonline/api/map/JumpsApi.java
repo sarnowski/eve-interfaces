@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface JumpsApi extends ApiService {
 
+    public static final String XMLPATH = "/map/Jumps.xml.aspx";
+
+
 	/**
 	 * @return a list of all systems with a minimum of one jump
 	 * @throws ApiException
