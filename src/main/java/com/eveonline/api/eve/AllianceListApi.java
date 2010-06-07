@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface AllianceListApi extends ApiService {
 
+     public static final String XMLPATH = "/eve/AllianceList.xml.aspx";
+
+
     /**
      * @return a list of all alliances
      * @throws ApiException

@@ -23,7 +23,7 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface Kills extends ApiListResult<Kills.SolarSystem> {
+public interface Kills<K extends Kills.SolarSystem> extends ApiListResult<K> {
 
 	/**
 	 * @return when the list data was recorded

@@ -23,7 +23,7 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface AllianceList extends ApiListResult<AllianceList.Alliance> {
+public interface AllianceList<A extends AllianceList.Alliance> extends ApiListResult<A> {
 
     interface Alliance extends ApiResult {
 
@@ -60,7 +60,7 @@ public interface AllianceList extends ApiListResult<AllianceList.Alliance> {
         /**
          * @return list of corporations in the alliance
          */
-        ApiListResult<Corporation> getCorporations();
+        ApiListResult<? extends Corporation> getCorporations();
 
     }
 

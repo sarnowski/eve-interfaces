@@ -23,7 +23,7 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface Sovereignty extends ApiListResult<Sovereignty.SolarSystem> {
+public interface Sovereignty<S extends Sovereignty.SolarSystem> extends ApiListResult<S> {
 
 	/**
 	 * @return when the list data was recorded
