@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -25,6 +24,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface AccountBalanceApi extends ApiService {
 
-	ApiListResult<AccountBalance> getAccountBalances(FullApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/AccountBalance.xml.aspx";
+	
+
+	AccountBalance getAccountBalances(FullApiKey key, int characterId) throws ApiException;
 
 }

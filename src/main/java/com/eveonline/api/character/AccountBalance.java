@@ -15,19 +15,22 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
-
-import java.math.BigDecimal;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface AccountBalance extends ApiResult {
+public interface AccountBalance<A extends AccountBalance.Account> extends ApiListResult<A> {
+	
+	interface Account extends ApiResult {
 
-	int getAccountId();
+		long geId();
 
-	int getAccountKey();
+		int getKey();
 
-	BigDecimal getBalance();
+		long getBalance();
+
+	}
 
 }

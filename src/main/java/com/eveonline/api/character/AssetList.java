@@ -21,26 +21,24 @@ import com.eveonline.api.ApiResult;
 /**
  * @author Tobias Sarnowski
  */
-public interface Asset extends ApiResult {
+public interface AssetList<A extends AssetList.Asset> extends ApiListResult<A> {
 
-	int getItemId();
+	interface Asset extends ApiResult {
 
-	int getTypeId();
+		int getItemId();
 
-	int getQuantity();
+		int getTypeId();
 
-	int getFlag();
+		int getQuantity();
 
-	boolean isSingleton();
+		int getFlag();
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
-	interface Container extends Asset {
+		boolean isSingleton();
+
 
 		int getLocationId();
 
-		ApiListResult<Asset> getContainingAssets();
+		ApiListResult<? extends Asset> getContainingAssets();
 
 	}
 }
