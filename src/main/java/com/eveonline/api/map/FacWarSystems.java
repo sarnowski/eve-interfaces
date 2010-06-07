@@ -21,7 +21,7 @@ import com.eveonline.api.ApiResult;
 /**
  * @author Tobias Sarnowski
  */
-public interface FacWarSystems extends ApiListResult<FacWarSystems.SolarSystem> {
+public interface FacWarSystems<S extends FacWarSystems.SolarSystem> extends ApiListResult<S> {
 
 	interface SolarSystem extends ApiResult {
 
