@@ -13,42 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.eveonline.api.img;
 
-import com.eveonline.api.ApiService;
-import com.eveonline.api.exceptions.ApiException;
+import java.io.InputStream;
+
 
 /**
  * @author Tobias Sarnowski
  */
-public interface CharacterPortraitApi extends ApiService {
-
-	public static final String URL = "http://img.eve.is/serv.asp";
-
+public interface CharacterPortrait {
 
 	/**
-	 * @param characterId the character's ID
-	 * @param size Size can be 64x64px or 256x264px
-	 * @return a JPEG encoded image of the character
-	 * @throws ApiException
+	 * @return the binary representation of the image
 	 */
-	CharacterPortrait getCharacterPortrait(long characterId, PortraitSize size) throws ApiException;
+	InputStream getContent();
 
+	/**
+	 * @return size of the image
+	 */
+	long getContentLength();
 
-	enum PortraitSize {
-		SIZE_64(64),
-		SIZE_256(256);
-
-
-		private final int size;
-
-		PortraitSize(int size) {
-			this.size = size;
-		}
-
-		public int getSize() {
-			return size;
-		}
-	}
+	/**
+	 * @return image type
+	 */
+	String getContentType();
 
 }

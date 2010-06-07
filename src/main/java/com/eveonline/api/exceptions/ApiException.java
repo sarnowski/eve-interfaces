@@ -18,7 +18,7 @@ package com.eveonline.api.exceptions;
 /**
  * @author Tobias Sarnowski
  */
-public class ApiException extends Exception {
+public abstract class ApiException extends Exception {
 
 	public ApiException(String message) {
 		super(message);
