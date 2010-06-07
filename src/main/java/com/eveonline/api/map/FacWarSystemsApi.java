@@ -23,6 +23,9 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface FacWarSystemsApi extends ApiService {
 
+    public static final String XMLPATH = "/map/FacWarSystems.xml.aspx";
+
+
 	/**
 	 * @return list of solar systems used for the faction warfare
 	 * @throws ApiException
