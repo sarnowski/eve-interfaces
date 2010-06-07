@@ -23,7 +23,7 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface AllianceListApi extends ApiService {
 
-     public static final String XMLPATH = "/eve/AllianceList.xml.aspx";
+	public static final String XMLPATH = "/eve/AllianceList.xml.aspx";
 
 
     /**
