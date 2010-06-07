@@ -25,19 +25,40 @@ public interface AssetList<A extends AssetList.Asset> extends ApiListResult<A> {
 
 	interface Asset extends ApiResult {
 
-		int getItemId();
+		/**
+		 * @return the asset's ID
+		 */
+		long getId();
 
-		int getTypeId();
+		/**
+		 * @return the asset's typeID
+		 */
+		long getTypeId();
 
-		int getQuantity();
+		/**
+		 * @return count of assets of this type
+		 */
+		long getQuantity();
 
+		/**
+		 * @return the asset's type (see database table 'invFlags')
+		 */
 		int getFlag();
 
+		/**
+		 * @return if this item is packaged
+		 */
 		boolean isSingleton();
 
 
-		int getLocationId();
+		/**
+		 * @return the asset's solarsystem or station if not within a container (else 0)
+		 */
+		long getLocationId();
 
+		/**
+		 * @return the list of assets, contained in this asset
+		 */
 		ApiListResult<? extends Asset> getContainingAssets();
 
 	}

@@ -24,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface CharacterSheetApi extends ApiService {
 
+	public static final String XMLPATH = "/char/CharacterSheet.xml.aspx";
+
+
+	/**
+	 * @param key the limited api key
+	 * @param characterId the character's ID
+	 * @return detailed informations about a character
+	 * @throws ApiException
+	 */
 	CharacterSheet getCharacterSheet(LimitedApiKey key, int characterId) throws ApiException;
 
 }

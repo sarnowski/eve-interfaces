@@ -25,10 +25,19 @@ public interface AccountBalance<A extends AccountBalance.Account> extends ApiLis
 	
 	interface Account extends ApiResult {
 
+		/**
+		 * @return the account's ID
+		 */
 		long geId();
 
+		/**
+		 * @return the account's key ("1000" for characters)
+		 */
 		int getKey();
 
+		/**
+		 * @return ISK * 100
+		 */
 		long getBalance();
 
 	}

@@ -15,19 +15,36 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface Contact extends ApiResult {
+public interface ContactList<C extends ContactList.Contact> extends ApiListResult<C> {
 
-	int getContactId();
+	interface Contact extends ApiResult {
 
-	String getContactName();
+		/**
+		 * @return the contact's ID
+		 */
+		long getId();
 
-	boolean isInWatchlist();
+		/**
+		 * @return the contact's name
+		 */
+		String getName();
 
-	int getStanding();
+		/**
+		 * @return if the contact is in the watchlist
+		 */
+		boolean isInWatchlist();
+
+		/**
+		 * @return the given standing * 10
+		 */
+		int getStanding();
+
+	}
 
 }

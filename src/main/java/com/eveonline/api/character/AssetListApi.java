@@ -25,8 +25,14 @@ import com.eveonline.api.exceptions.ApiException;
 public interface AssetListApi extends ApiService {
 
 	public static final String XMLPATH = "/char/AssetList.xml.aspx";
-	
 
+
+	/**
+	 * @param key full api key
+	 * @param characterId the character's ID
+	 * @return a list of all assets of a character
+	 * @throws ApiException
+	 */
 	AssetList getAssets(FullApiKey key, int characterId) throws ApiException;
 
 }

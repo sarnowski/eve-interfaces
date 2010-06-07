@@ -24,4 +24,6 @@ import com.eveonline.api.ApiService;
  */
 public interface CalendarEventAttendeesApi extends ApiService {
 
+	public static final String XMLPATH = "/char/CalendarEventAttendees.xml.aspx";
+
 }

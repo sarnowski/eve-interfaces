@@ -25,8 +25,14 @@ import com.eveonline.api.exceptions.ApiException;
 public interface AccountBalanceApi extends ApiService {
 
 	public static final String XMLPATH = "/char/AccountBalance.xml.aspx";
-	
 
+	
+	/**
+	 * @param key full api key
+	 * @param characterId the character's ID
+	 * @return the ISK balance of a character
+	 * @throws ApiException
+	 */
 	AccountBalance getAccountBalances(FullApiKey key, int characterId) throws ApiException;
 
 }

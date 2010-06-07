@@ -17,111 +17,195 @@ package com.eveonline.api.character;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
-
-import java.math.BigDecimal;
+import com.eveonline.constants.SkillAttribute;
+import com.eveonline.constants.SkillLevel;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface CharacterSheet {
+public interface CharacterSheet extends ApiResult {
 
-	int getCharacterId();
+	/**
+	 * @return the character's ID
+	 */
+	long getId();
 
+	/**
+	 * @return the character's name
+	 */
 	String getName();
 
+	/**
+	 * @return the character's race
+	 */
 	String getRace();
 
+	/**
+	 * @return the character's bloodline
+	 */
 	String getBloodLine();
 
+	/**
+	 * @return the character's gender
+	 */
 	String getGender();
 
+	/**
+	 * @return the character's corporation ID
+	 */
+	long getCorporationId();
+
+	/**
+	 * @return the character's corporation name
+	 */
 	String getCorporationName();
 
-	int getCorporationId();
-
+	/**
+	 * @return the character's clone name
+	 */
 	String getCloneName();
 
-	int getCloneSkillPoints();
-
-	ApiListResult<Skills> getSkills();
-
-	BigDecimal getBalance();
-
-	ApiListResult<AttributeEnhancer> getAttributeEnhancers();
-
-	ApiListResult<CorporationRole> getCorporationRoles();
-
-	ApiListResult<CorporationRole> getCorporationRolesAtHQ();
-
-	ApiListResult<CorporationRole> getCorporationRolesAtOther();
-
+	/**
+	 * @return the count of skillpoints, storable by the character's clone
+	 */
+	long getCloneSkillPoints();
 
 	/**
-	 * @author Tobias Sarnowski
+	 * @return list of the character's attribute values
 	 */
+	ApiListResult<? extends Attribute> getAttributes();
+
+	/**
+	 * @return the character's attribute enhancer implants
+	 */
+	ApiListResult<? extends AttributeEnhancer> getAttributeEnhancers();
+
+	/**
+	 * @return the character's skills
+	 */
+	ApiListResult<? extends Skill> getSkills();
+
+	/**
+	 * @return ISK * 100
+	 */
+	long getBalance();
+
+	/**
+	 * @return the character's certificates
+	 */
+	ApiListResult<? extends Certificate> getCertificates();
+
+	/**
+	 * @return the character's corporation roles
+	 */
+	ApiListResult<? extends CorporationRole> getCorporationRoles();
+
+	/**
+	 * @return the character's corporation roles at the HQ
+	 */
+	ApiListResult<? extends CorporationRole> getCorporationRolesAtHQ();
+
+	/**
+	 * @return the character's corporation roles at other players
+	 */
+	ApiListResult<? extends CorporationRole> getCorporationRolesAtOther();
+
+	/**
+	 * @return the character's list of titles
+	 */
+	ApiListResult<? extends CorporationTitle> getCorporationTitles();
+
+
 	interface Attribute extends ApiResult {
 
-		String getAttributeName();
+		/**
+		 * @return the attribute's type
+		 */
+		SkillAttribute getType();
 
-		int getAttributeValue();
+		/**
+		 * @return the attribute's value
+		 */
+		int getValue();
 
 	}
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
 	interface AttributeEnhancer extends ApiResult {
 
-		String getAugementorAttribute();
+		/**
+		 * @return the enhancer's name
+		 */
+		String getName();
 
-		String getAugementorName();
+		/**
+		 * @return the enhanced attribute
+		 */
+		SkillAttribute getAttribute();
 
-		int getAugementorValue();
+		/**
+		 * @return the value of enhancement
+		 */
+		int getValue();
 
 	}
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
 	interface Certificate extends ApiResult {
 
-		int getCertificateId();
+		/**
+		 * @return the certificate's ID
+		 */
+		long getId();
 
 	}
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
 	interface CorporationRole extends ApiResult {
 
-		int getRoleId();
+		/**
+		 * @return the role's ID
+		 */
+		long getId();
 
-		String getRoleName();
+		/**
+		 * @return the role's name
+		 */
+		String getName();
 
 	}
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
 	interface CorporationTitle extends ApiResult {
 
-		int getTitleId();
+		/**
+		 * @return the title's ID
+		 */
+		int getId();
 
-		String getTitleName();
+		/**
+		 * @return the title's name
+		 */
+		String getName();
 
 	}
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
-	interface Skills extends ApiResult {
+	interface Skill extends ApiResult {
 
+		/**
+		 * @return the skill's typeID
+		 */
 		int getTypeId();
 
+		/**
+		 * @return how many skillpoints already gained
+		 */
 		int getSkillPoints();
 
-		int getLevel();
+		/**
+		 * @return the skill's level
+		 */
+		SkillLevel getLevel();
 
+		/**
+		 * @return is an unpublished skill
+		 */
 		boolean isUnpublished();
 
 	}

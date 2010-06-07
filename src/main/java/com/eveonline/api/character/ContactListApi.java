@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -25,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ContactListApi extends ApiService {
 
-	ApiListResult<Contact> getContactList(FullApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/ContactList.xml.aspx";
+
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @return a list of all contacts of a character
+	 * @throws ApiException
+	 */
+	ContactList getContactList(FullApiKey key, int characterId) throws ApiException;
 
 }
