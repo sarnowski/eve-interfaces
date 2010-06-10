@@ -6,7 +6,7 @@
 
 	<groupId>org.onsteroids.eve</groupId>
 	<artifactId>eve-interfaces</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>1.0-tyrannis-api-SNAPSHOT</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -23,6 +23,29 @@
 			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
 		</license>
 	</licenses>
+
+	<developers>
+		<developer>
+			<name>Tobias Sarnowski</name>
+			<email>sarnowski@new-thoughts.org</email>
+			<roles>
+				<role>Project Leader</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<contributors>
+		<contributor>
+			<name>Dominik Eckelmann</name>
+			<email>eckelmann@gmail.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</contributor>
+	</contributors>
 
 	<build>
 		<plugins>
@@ -116,13 +139,6 @@
 						</goals>
 					</execution>
 				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>org.onsteroids.eve</groupId>
-						<artifactId>eve-interfaces</artifactId>
-						<version>${project.version}</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
