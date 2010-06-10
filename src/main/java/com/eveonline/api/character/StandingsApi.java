@@ -24,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface StandingsApi extends ApiService {
 
+	public static final String XMLPATH = "/char/Standings.xml.aspx";
+
+
+	/**
+	 * @param key the limited api key
+	 * @param characterId the character's ID
+	 * @return list of standings
+	 * @throws ApiException
+	 */
 	Standings getStandings(LimitedApiKey key, int characterId) throws ApiException;
 
 }

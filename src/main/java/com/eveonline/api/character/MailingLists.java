@@ -15,23 +15,26 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
-
-import java.util.Date;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface Notification extends ApiResult {
+public interface MailingLists<M extends MailingLists.MailingList> extends ApiListResult<M> {
 
-	int getNotificationId();
+	interface MailingList extends ApiResult {
 
-	int getTypeId();
+		/**
+		 * @return the list's ID
+		 */
+		long getId();
 
-	int getSenderId();
+		/**
+		 * @return the list's name
+		 */
+		String getName();
 
-	Date getSentDate();
-
-	boolean isRead();
+	}
 
 }

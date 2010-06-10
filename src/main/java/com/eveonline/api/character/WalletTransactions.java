@@ -17,51 +17,75 @@ package com.eveonline.api.character;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
-import com.eveonline.constants.SkillLevel;
 
 import java.util.Date;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface SkillQueue<S extends SkillQueue.Skill> extends ApiListResult<S> {
+public interface WalletTransactions<T extends WalletTransactions.Transaction> extends ApiListResult<T> {
 
-	interface Skill extends ApiResult {
+	interface Transaction extends ApiResult {
 
 		/**
-		 * @return in which position is this skill
+		 * @return the transaciton's date
 		 */
-		int getQueuePosition();
+		Date getDate();
 
 		/**
-		 * @return the skill's typeID
+		 * @return the transaction's ID
+		 */
+		long getId();
+
+		/**
+		 * @return transaction count
+		 */
+		long getQuantity();
+
+		/**
+		 * @return the the type's name
+		 */
+		String getTypeName();
+
+		/**
+		 * @return the typeID
 		 */
 		long getTypeId();
 
 		/**
-		 * @return which level will be trained
+		 * @return price ISK*100
 		 */
-		SkillLevel getLevel();
+		long getPrice();
 
 		/**
-		 * @return skillpoints before the skill is trained
+		 * @return the client's ID
 		 */
-		int getStartSkillPoints();
+		long getClientId();
 
 		/**
-		 * @return skillpoints after the skill is trained
+		 * @return the client's name
 		 */
-		int getEndSkillPoints();
+		String getClientName();
 
 		/**
-		 * @return when the skill will start to train
+		 * @return the station's ID
 		 */
-		Date getStartTime();
+		long getStationId();
 
 		/**
-		 * @return when the skill is trained
+		 * @return the station's name
 		 */
-		Date getEndTime();
+		String getStationName();
+
+		/**
+		 * @return the type of transaction
+		 */
+		String getTransactionType();
+
+		/**
+		 * @return what's the reason
+		 */
+		String getTransactionFor();
 
 	}
 

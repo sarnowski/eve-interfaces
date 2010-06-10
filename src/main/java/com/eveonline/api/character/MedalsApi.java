@@ -24,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MedalsApi extends ApiService {
 
-	Medals getMedals(FullApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/Medals.xml.aspx ";
+
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @return a list of all medals
+	 * @throws ApiException
+	 */
+	Medals getMedals(FullApiKey key, long characterId) throws ApiException;
 
 }

@@ -24,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface FacWarStatsApi extends ApiService {
 
-	FacWarStats getFactionWarfareStatistics(LimitedApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/FacWarStats.xml.aspx ";
+
+
+	/**
+	 * @param key the limited api key
+	 * @param characterId the character's ID
+	 * @return faction warfare statistics of this character
+	 * @throws ApiException
+	 */
+	FacWarStats getFactionWarfareStatistics(LimitedApiKey key, long characterId) throws ApiException;
 
 }

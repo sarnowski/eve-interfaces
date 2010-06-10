@@ -15,37 +15,42 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiResult;
+import com.eveonline.api.ApiListResult;
 
 import java.util.Date;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface WalletTransaction extends ApiResult {
+public interface ContactNotifications<N extends Notifications> extends ApiListResult<N> {
 
-	Date getTramsactopmDate();
+	interface Notification {
 
-	int getTransactionId();
+		/**
+		 * @return the notification's ID
+		 */
+		long getId();
 
-	int getQuantity();
+		/**
+		 * @return the sender's ID
+		 */
+		long getSenderId();
 
-	String getTypeName();
+		/**
+		 * @return the sender's name
+		 */
+		String getSenderName();
 
-	int getTypeId();
+		/**
+		 * @return then the notification was sent
+		 */
+		Date getSentDate();
 
-	int getPrice();
+		/**
+		 * @return the data, sent with this notification
+		 */
+		String getMessageData();
 
-	int getClientId();
-
-	int getClientName();
-
-	int getStationId();
-
-	String getStationName();
-
-	String getTransactionType();
-
-	String getTransactionFor();
+	}
 
 }

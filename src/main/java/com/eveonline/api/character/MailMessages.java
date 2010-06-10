@@ -17,51 +17,56 @@ package com.eveonline.api.character;
 
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
-import com.eveonline.constants.SkillLevel;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Tobias Sarnowski
  */
-public interface SkillQueue<S extends SkillQueue.Skill> extends ApiListResult<S> {
+public interface MailMessages<M extends MailMessages.Mail> extends ApiListResult<M> {
 
-	interface Skill extends ApiResult {
-
-		/**
-		 * @return in which position is this skill
-		 */
-		int getQueuePosition();
+	interface Mail extends ApiResult {
 
 		/**
-		 * @return the skill's typeID
+		 * @return the mail's ID
 		 */
-		long getTypeId();
+		long getId();
 
 		/**
-		 * @return which level will be trained
+		 * @return the sender's ID
 		 */
-		SkillLevel getLevel();
+		long getSenderId();
 
 		/**
-		 * @return skillpoints before the skill is trained
+		 * @return date, when the message was sent
 		 */
-		int getStartSkillPoints();
+		Date getSentDate();
 
 		/**
-		 * @return skillpoints after the skill is trained
+		 * @return the mail's title
 		 */
-		int getEndSkillPoints();
+		String getTitle();
 
 		/**
-		 * @return when the skill will start to train
+		 * @return if the mail was sent to a corporation or alliance, this is the ID
 		 */
-		Date getStartTime();
+		long toCorporationOrAllianceId();
 
 		/**
-		 * @return when the skill is trained
+		 * @return list of receiver's
 		 */
-		Date getEndTime();
+		List<Long> toCharacterIds();
+
+		/**
+		 * @return list of mailinglists
+		 */
+		List<Long> toListIds();
+
+		/**
+		 * @return if the message is already read
+		 */
+		boolean isRead();
 
 	}
 

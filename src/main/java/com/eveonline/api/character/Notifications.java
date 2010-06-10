@@ -15,6 +15,7 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 import java.util.Date;
@@ -22,16 +23,34 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface ContactNotification extends ApiResult {
+public interface Notifications<N extends Notifications.Notification> extends ApiListResult<N> {
 
-	int getNotificationId();
+	interface Notification extends ApiResult {
 
-	int getSenderId();
+		/**
+		 * @return the notification's ID
+		 */
+		long getId();
 
-	String getSenderName();
+		/**
+		 * @return the typeID
+		 */
+		long getTypeId();
 
-	Date getSentDate();
+		/**
+		 * @return the sender's ID
+		 */
+		long getSenderId();
 
-	String getMessageData();
+		/**
+		 * @return the date when the notification was sent
+		 */
+		Date getSentDate();
+
+		/**
+		 * @return if the notification is read
+		 */
+		boolean isRead();
+	}
 
 }

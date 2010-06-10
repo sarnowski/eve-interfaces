@@ -33,6 +33,6 @@ public interface CharacterSheetApi extends ApiService {
 	 * @return detailed informations about a character
 	 * @throws ApiException
 	 */
-	CharacterSheet getCharacterSheet(LimitedApiKey key, int characterId) throws ApiException;
+	CharacterSheet getCharacterSheet(LimitedApiKey key, long characterId) throws ApiException;
 
 }

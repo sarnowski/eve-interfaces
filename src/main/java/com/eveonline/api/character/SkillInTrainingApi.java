@@ -24,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface SkillInTrainingApi extends ApiService {
 
-	SkillInTraining getSkillInTraining(LimitedApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/SkillInTraining.xml.aspx";
+
+
+	/**
+	 * @param key the limited api key
+	 * @param characterId the character's ID
+	 * @return the current skill in training
+	 * @throws ApiException
+	 */
+	SkillInTraining getSkillInTraining(LimitedApiKey key, long characterId) throws ApiException;
 
 }

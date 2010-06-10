@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -25,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface NotificationsApi extends ApiService {
 
-	ApiListResult<Notification> getNotifications(FullApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/Notifications.xml.aspx";
+
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @return all notification's of the character
+	 * @throws ApiException
+	 */
+	Notifications getNotifications(FullApiKey key, long characterId) throws ApiException;
 
 }

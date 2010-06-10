@@ -33,6 +33,6 @@ public interface ContactListApi extends ApiService {
 	 * @return a list of all contacts of a character
 	 * @throws ApiException
 	 */
-	ContactList getContactList(FullApiKey key, int characterId) throws ApiException;
+	ContactList getContactList(FullApiKey key, long characterId) throws ApiException;
 
 }

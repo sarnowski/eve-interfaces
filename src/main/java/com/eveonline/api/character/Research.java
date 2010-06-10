@@ -15,6 +15,7 @@
  */
 package com.eveonline.api.character;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 import java.util.Date;
@@ -22,16 +23,35 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface Research extends ApiResult {
+public interface Research<J extends Research.Job> extends ApiListResult<J> {
 
-	int getAgentId();
+	interface Job extends ApiResult {
 
-	int getSkillTypeId();
+		/**
+		 * @return the agent's ID
+		 */
+		long getAgentId();
 
-	Date getResearchStartDate();
+		/**
+		 * @return the skill's typeID
+		 */
+		long getSkillTypeId();
 
-	double getPointsPerDay();
+		/**
+		 * @return when the research started
+		 */
+		Date getResearchStartDate();
 
-	double getRemainderPoints();
+		/**
+		 * @return research points used per day
+		 */
+		double getPointsPerDay();
+
+		/**
+		 * @return remaining research points
+		 */
+		double getRemainderPoints();
+
+	}
 
 }

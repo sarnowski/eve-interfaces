@@ -23,79 +23,84 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface WalletJournal<E extends WalletJournal.Entry> extends ApiListResult<E> {
+public interface MarketOrders<M extends MarketOrders.MarketOrder> extends ApiListResult<M> {
 
-	interface Entry extends ApiResult {
-
-		/**
-		 * @return date of the entry
-		 */
-		Date getDate();
+	interface MarketOrder extends ApiResult {
 
 		/**
-		 * @return entry's ID
+		 * @return the market order's ID
 		 */
-		long getRefId();
+		long getId();
 
 		/**
-		 * @return entrie's typeID
+		 * @return the character's ID
 		 */
-		long getRefTypeId();
+		long getCharacterId();
 
 		/**
-		 * @return name of the first owner
+		 * @return the station's ID
 		 */
-		String getFirstOwnerName();
+		long getStationId();
 
 		/**
-		 * @return ID of the first owner
+		 * @return count of items
 		 */
-		long getFirstOwnerId();
+		long getVolumeEntered();
 
 		/**
-		 * @return name of the second owner
+		 * @return count of items remaining
 		 */
-		String getSecondOwnerName();
+		long getVolumeRemaining();
 
 		/**
-		 * @return ID of the second owner
+		 * @return minimum volume
 		 */
-		long getSecondOwnerId();
+		long getMinVolume();
 
 		/**
-		 * @return the first argument name
+		 * @return the order's state
 		 */
-		String getFirstArgumentName();
+		int getOrderState();
 
 		/**
-		 * @return the first argument's ID
+		 * @return the item's typeID
 		 */
-		long getFirstArgumentId();
+		long getTypeId();
 
 		/**
-		 * @return amount of ISK*100
+		 * @return the range in X
 		 */
-		long getAmount();
+		long getRange();
 
 		/**
-		 * @return balance of ISK*100
+		 * @return the account key
 		 */
-		long getBalance();
+		long getAccountKey();
 
 		/**
-		 * @return the message
+		 * @return get duration in X
 		 */
-		String getReason();
+		long getDuration();
 
 		/**
-		 * @return who got the tax
+		 * @return the escrow
 		 */
-		long getTaxReceiverId();
+		float getEscrow();
 
 		/**
-		 * @return how big was the tax
+		 * @return the ISK*100
 		 */
-		long getTaxAmount();
+		long getPrice();
+
+		/**
+		 * @return the big
+		 */
+		long getBid();
+
+		/**
+		 * @return when the order was started
+		 */
+		Date getIssued();
 
 	}
 

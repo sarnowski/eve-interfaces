@@ -24,4 +24,6 @@ import com.eveonline.api.ApiService;
  */
 public interface UpcomingCalendarEventsApi extends ApiService {
 
+	public static final String XMLPATH = "/char/UpcomingCalendarEvents.xml.aspx";
+
 }

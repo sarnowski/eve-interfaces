@@ -23,65 +23,132 @@ import java.util.Date;
 /**
  * @author Tobias Sarnowski
  */
-public interface KillLog extends ApiResult {
+public interface KillLog<K extends KillLog.Kill> extends ApiListResult<K> {
 
-	int getKillId();
+	interface Kill extends ApiResult {
 
-	int getSolarSystem();
+		/**
+		 * @return the kill's ID
+		 */
+		long getId();
 
-	Date getKillTime();
+		/**
+		 * @return the solar system's ID
+		 */
+		long getSolarSystem();
 
-	int getMoonId();
+		/**
+		 * @return the kill's time
+		 */
+		Date getKillTime();
 
-	Victim getVictim();
+		/**
+		 * @return the moon's ID
+		 */
+		long getMoonId();
 
-	ApiListResult<Attacker> getAttackers();
+		/**
+		 * @return the victim
+		 */
+		Victim getVictim();
 
-	ApiListResult<Item> getItems();
+		/**
+		 * @return the attackers
+		 */
+		ApiListResult<? extends Attacker> getAttackers();
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
+		/**
+		 * @return the victim's items
+		 */
+		ApiListResult<? extends Item> getItems();
+	}
+
+
 	interface Attacker extends ApiResult {
 
-		int getCharacterId();
+		/**
+		 * @return the attacker's ID
+		 */
+		long getId();
 
-		String getCharacterName();
+		/**
+		 * @return the attacker's name
+		 */
+		String getName();
 
-		int getCorporationId();
+		/**
+		 * @return the attacker's corporation ID
+		 */
+		long getCorporationId();
 
+		/**
+		 * @return the corporation's name
+		 */
 		String getCorporationName();
 
-		int getAllianceId();
+		/**
+		 * @return the alliance ID
+		 */
+		long getAllianceId();
 
+		/**
+		 * @return the alliance name
+		 */
 		String getAllianceName();
 
+		/**
+		 * @return the attacker's security status
+		 */
 		float getSecurityStatus();
 
-		int getDamageDone();
+		/**
+		 * @return number of damage done to the victim
+		 */
+		long getDamageDone();
 
+		/**
+		 * @return if the attacker had the final blow
+		 */
 		boolean hadFinalBlow();
 
-		int getWeaponTypeId();
+		/**
+		 * @return typeID of weapon used
+		 */
+		long getWeaponTypeId();
 
-		int getShipTypeId();
+		/**
+		 * @return typeIF of the ship
+		 */
+		long getShipTypeId();
 
 	}
 
-	/**
-	 * @author Tobias Sarnowski
-	 */
 	interface Item extends ApiResult {
 
-		int getTypeId();
+		/**
+		 * @return the item's typeID
+		 */
+		long getTypeId();
 
+		/**
+		 * @return the item's invFlag
+		 */
 		int getFlag();
 
-		int getQuantityDropped();
+		/**
+		 * @return count of dropped items
+		 */
+		long getQuantityDropped();
 
-		int getQuantityDestroyed();
+		/**
+		 * @return count of destroyed items
+		 */
+		long getQuantityDestroyed();
 
-		ApiListResult<Item> getContainingItems();
+		/**
+		 * @return list of contained items
+		 */
+		ApiListResult<? extends Item> getContainingItems();
 
 	}
 
@@ -90,19 +157,40 @@ public interface KillLog extends ApiResult {
 	 */
 	interface Victim extends ApiResult {
 
-		int getCharacterId();
+		/**
+		 * @return the victim's ID
+		 */
+		long getId();
 
-		String getCharacterName();
+		/**
+		 * @return the victim's name
+		 */
+		String getName();
 
-		int getCorporationId();
+		/**
+		 * @return the corporation ID
+		 */
+		long getCorporationId();
 
+		/**
+		 * @return the corporation name
+		 */
 		String getCorporationName();
 
-		int getAllianceId();
+		/**
+		 * @return the alliance ID
+		 */
+		long getAllianceId();
 
-		int getDamageTaken();
+		/**
+		 * @return damage taken on the loss
+		 */
+		long getDamageTaken();
 
-		int getShipTypeId();
+		/**
+		 * @return the ship's typeID
+		 */
+		long getShipTypeId();
 
 	}
 }

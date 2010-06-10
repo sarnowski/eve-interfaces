@@ -16,6 +16,7 @@
 package com.eveonline.api.character;
 
 import com.eveonline.api.ApiResult;
+import com.eveonline.constants.SkillLevel;
 
 import java.util.Date;
 
@@ -24,16 +25,34 @@ import java.util.Date;
  */
 public interface SkillInTraining extends ApiResult {
 
+	/**
+	 * @return if a skill is in training
+	 */
 	boolean isSkillInTraining();
 
+	/**
+	 * @return when the skill will be trained
+	 */
 	Date getTrainingEndTime();
 
+	/**
+	 * @return when the skill started to train
+	 */
 	Date getTrainingStartTime();
 
+	/**
+	 * @return the skill's typeID
+	 */
 	int getTrainingTypeId();
 
-	int getTrainingStartSkillPoints();
+	/**
+	 * @return how many skillpoints the skill had
+	 */
+	long getTrainingStartSkillPoints();
 
-	int getTrainingToLevel();
+	/**
+	 * @return to which level the skill will be trained
+	 */
+	SkillLevel getTrainingToLevel();
 
 }

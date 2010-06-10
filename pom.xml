@@ -8,7 +8,7 @@
 	<artifactId>eve-interfaces</artifactId>
 	<version>1.0-tyrannis-api-SNAPSHOT</version>
 
-	<name>EVE-Online Interfaces</name>
+	<name>EVE on steroids: EVE-Online Interfaces</name>
 	<description>This is a collection of EVE-Online interfaces, which describe the APIs, provided by CCP.</description>
 
 	<properties>

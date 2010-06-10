@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -25,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ResearchApi extends ApiService {
 
-	ApiListResult<Research> getResearches(FullApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/Research.xml.aspx";
+
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @return the list of researches
+	 * @throws ApiException
+	 */
+	Research getResearches(FullApiKey key, long characterId) throws ApiException;
 
 }

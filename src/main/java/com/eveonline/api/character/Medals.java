@@ -25,31 +25,61 @@ import java.util.Date;
  */
 public interface Medals extends ApiResult {
 
-	ApiListResult<CurrentCorporationMedal> getCurrentCorporationMedals();
+	/**
+	 * @return list of medals of the current corporation
+	 */
+	ApiListResult<? extends CurrentCorporationMedal> getCurrentCorporationMedals();
 
-	ApiListResult<OtherCorporationMedal> getOtherCorporationMedals();
+	/**
+	 * @return list of medals, gained in other corporations
+	 */
+	ApiListResult<? extends OtherCorporationMedal> getOtherCorporationMedals();
 
 
 	interface CurrentCorporationMedal extends ApiResult {
 
-		int getMedalId();
+		/**
+		 * @return the medal's ID
+		 */
+		long getId();
 
+		/**
+		 * @return the reason, why the medal was earned
+		 */
 		String getReason();
 
+		/**
+		 * @return the medal's status
+		 */
 		String getStatus();
 
-		int getIssuerId();
+		/**
+		 * @return who gave the medal
+		 */
+		long getIssuerId();
 
+		/**
+		 * @return when was the medal given
+		 */
 		Date getIssued();
 
 	}
 
 	interface OtherCorporationMedal extends CurrentCorporationMedal {
 
+		/**
+		 * @return the corporation's ID
+		 */
 		int getCorporationId();
 
+		/**
+		 * @return the medal's title
+		 */
 		String getTitle();
 
+		/**
+		 * @return the medal's description
+		 */
 		String getDescription();
 
 	}

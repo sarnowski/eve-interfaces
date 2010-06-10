@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -25,8 +24,24 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface WalletJournalApi extends ApiService {
 
-	ApiListResult<WalletJournal> getWalletJournal(FullApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/WalletJournal.xml.aspx";
 
-	ApiListResult<WalletJournal> getWalletJournal(FullApiKey key, int characterId, int beforeRefId) throws ApiException;
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @return list of wallet entries
+	 * @throws ApiException
+	 */
+	WalletJournal getWalletJournal(FullApiKey key, long characterId) throws ApiException;
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @param beforeRefId list entries before this ID
+	 * @return list of wallet entries
+	 * @throws ApiException
+	 */
+	WalletJournal getWalletJournal(FullApiKey key, long characterId, long beforeRefId) throws ApiException;
 
 }

@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -25,8 +24,24 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface KillLogApi extends ApiService {
 
-	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/KillLog.xml.aspx ";
 
-	ApiListResult<KillLog> getKillLogs(FullApiKey key, int characterId, int beforeKillId) throws ApiException;
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @return a list of all kills
+	 * @throws ApiException
+	 */
+	KillLog getKillLogs(FullApiKey key, long characterId) throws ApiException;
+
+	/**
+	 * @param key the full api key
+	 * @param characterId the character's ID
+	 * @param beforeKillId the kill's ID for kills to show after
+	 * @return a list of kills before killID
+	 * @throws ApiException
+	 */
+	KillLog getKillLogs(FullApiKey key, long characterId, long beforeKillId) throws ApiException;
 
 }

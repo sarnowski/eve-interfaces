@@ -23,31 +23,55 @@ import com.eveonline.api.ApiResult;
  */
 public interface Standings extends ApiResult {
 
-	ApiListResult<StandingTo> getStandingsTo();
+	/**
+	 * @return all standings to someone else
+	 */
+	ApiListResult<? extends StandingTo> getStandingsTo();
 
-	ApiListResult<StandingFrom> getStandingsFrom();
+	/**
+	 * @return all standings from someone else
+	 */
+	ApiListResult<? extends StandingFrom> getStandingsFrom();
 
 
 	interface Standing extends ApiResult {
 
+		/**
+		 * @return what type of standing
+		 */
 		String getType();
 
+		/**
+		 * @return standing * 10
+		 */
 		int getStanding();
 
 	}
 
 	interface StandingTo extends Standing {
 
-		int getToId();
+		/**
+		 * @return ID
+		 */
+		long getToId();
 
+		/**
+		 * @return na,e
+		 */
 		String getToName();
 
 	}
 
 	interface StandingFrom extends Standing {
 
-		int getFromId();
+		/**
+		 * @return ID
+		 */
+		long getFromId();
 
+		/**
+		 * @return name
+		 */
 		String getFromName();
 
 	}

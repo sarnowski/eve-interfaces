@@ -25,24 +25,54 @@ import java.util.Date;
  */
 public interface FacWarStats extends ApiResult {
 
-	int getFactionId();
+	/**
+	 * @return the faction's ID the character belongs to
+	 */
+	long getFactionId();
 
+	/**
+	 * @return the faction's name
+	 */
 	String getFactionName();
 
+	/**
+	 * @return date, since the character is enlisted
+	 */
 	Date getEnlisted();
 
+	/**
+	 * @return the highest rank, reached by this character
+	 */
 	int getHighestRank();
 
+	/**
+	 * @return count of kills made yesterday
+	 */
 	int getKillsYesterday();
 
-	int getKillsLastDay();
+	/**
+	 * @return count of kills made last week
+	 */
+	int getKillsLastWeek();
 
+	/**
+	 * @return count of kills made in total
+	 */
 	int getKillsTotal();
 
-	int getVictoryPointsYesterday();
+	/**
+	 * @return count of victory points made yesterday
+	 */
+	long getVictoryPointsYesterday();
 
+	/**
+	 * @return count of victory points made last week
+	 */
 	int getVictoryPointsLastWeek();
 
+	/**
+	 * @return count of victory points made in total
+	 */
 	int getVictoryPointsTotal();
 
 }

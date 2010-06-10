@@ -15,7 +15,6 @@
  */
 package com.eveonline.api.character;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.LimitedApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -25,6 +24,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface SkillQueueApi extends ApiService {
 
-	ApiListResult<SkillQueue> getSkillQueue(LimitedApiKey key, int characterId) throws ApiException;
+	public static final String XMLPATH = "/char/SkillQueue.xml.aspx";
+
+
+	/**
+	 * @param key the limited api key
+	 * @param characterId the character's ID
+	 * @return all queued skills
+	 * @throws ApiException
+	 */
+	SkillQueue getSkillQueue(LimitedApiKey key, long characterId) throws ApiException;
 
 }

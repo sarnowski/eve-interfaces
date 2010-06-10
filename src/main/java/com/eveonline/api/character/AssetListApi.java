@@ -33,6 +33,6 @@ public interface AssetListApi extends ApiService {
 	 * @return a list of all assets of a character
 	 * @throws ApiException
 	 */
-	AssetList getAssets(FullApiKey key, int characterId) throws ApiException;
+	AssetList getAssets(FullApiKey key, long characterId) throws ApiException;
 
 }
