@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,6 +26,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface StarbaseListApi extends ApiService {
 
-    ApiListResult<Starbase> getStarbases(DirectorApiKey apiKey, int characterId, int apiVersion) throws ApiException;
+    public static final String XMLPATH = "/corp/StarbaseList.xml.aspx";
+
+
+    /**
+     * @param apiKey the director api key
+     * @param characterId the character's ID
+     * @return list of all starbases
+     * @throws ApiException if an error occurs
+     */
+    StarbaseList getStarbaseList(DirectorApiKey apiKey, long characterId) throws ApiException;
 	
 }

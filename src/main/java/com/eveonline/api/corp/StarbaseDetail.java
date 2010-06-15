@@ -21,18 +21,112 @@ import com.eveonline.api.ApiResult;
 
 import java.util.Date;
 
-public interface StarbaseDetail extends ApiResult{
+/**
+ * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
+ */
+public interface StarbaseDetail extends ApiResult {
 
+    /**
+     * @return the starbase's state
+     */
     int getState();
 
+    /**
+     * @return when the current state started
+     */
     Date getStateTimestamp();
 
+    /**
+     * @return when the starbase went/goes online
+     */
     Date getOnlineTimestamp();
 
+    /**
+     * @return informations about the general settings
+     */
     GeneralSettings getGeneralSettings();
 
+    /**
+     * @return informations about the combat settings
+     */
     CombatSettings getCombatSettings();
 
-    ApiListResult<Fuel> getFuels();
+    /**
+     * @return list of fuel for the starbase
+     */
+    ApiListResult<? extends Fuel> getFuels();
 
+
+    interface GeneralSettings extends ApiResult {
+
+        /**
+         * @return flags about the usage
+         */
+        int getUsageFlags();
+
+        /**
+         * @return flags about the deployment
+         */
+        int getDeployFlags();
+
+        /**
+         * @return if corporation members are allowed to interact
+         */
+        boolean allowCorporationMembers();
+
+        /**
+         * @return if alliance members are allowed to interact
+         */
+        boolean allowAllianceMembers();
+    }
+
+
+    interface CombatSettings extends ApiResult{
+
+        /**
+         * @return required standings
+         */
+        float getUseStandingsFromOwner();
+
+        /**
+         * @return
+         */
+        int getOnStandingDrop();
+
+        /**
+         * @return
+         */
+        int isOnStatusDrop();
+
+        /**
+         * @return
+         */
+        int getOnStatusDrop();
+
+        /**
+         * @return
+         */
+        boolean isOnAggression();
+
+        /**
+         * @return
+         */
+        boolean isOnCorporationWar();
+
+    }
+
+
+    interface Fuel extends ApiResult{
+
+        /**
+         * @return the fuel's typeID
+         */
+        long getTypeId();
+
+        /**
+         * @return amount of fuel
+         */
+        long getQuantity();
+    }
 }

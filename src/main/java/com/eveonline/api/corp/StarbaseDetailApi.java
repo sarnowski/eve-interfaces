@@ -25,6 +25,16 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface StarbaseDetailApi {
 
-    StarbaseDetail getStarbaseDetail(DirectorApiKey apiKey, int characterId, int itemId) throws ApiException;
+    public static final String XMLPATH = "/corp/StarbaseDetail.xml.aspx";
+
+
+    /**
+     * @param apiKey the directory api key
+     * @param characterId the character's ID
+     * @param starbaseId the starbase's ID
+     * @return details about a starbase
+     * @throws ApiException if an error occurs
+     */
+    StarbaseDetail getStarbaseDetail(DirectorApiKey apiKey, long characterId, long starbaseId) throws ApiException;
 	
 }
