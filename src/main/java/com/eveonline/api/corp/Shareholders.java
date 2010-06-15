@@ -19,9 +19,63 @@ package com.eveonline.api.corp;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
-public interface Shareholders extends ApiResult{
+public interface Shareholders extends ApiResult {
 
-    ApiListResult<ShareholdersCharacter> getCharacters();
+    /**
+     * @return list of characters holding shares
+     */
+    ApiListResult<? extends Character> getCharacters();
 
-    ApiListResult<ShareholdersCorporations> getCorporations();
+    /**
+     * @return list of corporations holding shares
+     */
+    ApiListResult<? extends Corporation> getCorporations();
+
+
+    interface Character extends ApiResult {
+
+        /**
+         * @return the character's ID
+         */
+        long getId();
+
+        /**
+         * @return the character's name
+         */
+        String getName();
+
+        /**
+         * @return the character's corporation ID
+         */
+        long getCorporationId();
+
+        /**
+         * @return the character's corporation name
+         */
+        String getCorporationName();
+
+        /**
+         * @return amount of shares
+         */
+        int getShares();
+    }
+
+
+    interface Corporation extends ApiResult {
+
+        /**
+         * @return the corporation's ID
+         */
+        int getId();
+
+        /**
+         * @return the corporation's name
+         */
+        String getName();
+
+        /**
+         * @return amount of shares
+         */
+        int getShares();
+    }
 }

@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,5 +26,14 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ShareholdersApi extends ApiService{
 
-    ApiListResult<Shareholders> getShareholders(DirectorApiKey apiKey, int characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/Shareholders.xml.aspx";
+
+
+    /**
+     * @param apiKey the directory api key
+     * @param characterId the character's ID
+     * @return list of all shareholers
+     * @throws ApiException if an error occurs
+     */
+    Shareholders getShareholders(DirectorApiKey apiKey, long characterId) throws ApiException;
 }
