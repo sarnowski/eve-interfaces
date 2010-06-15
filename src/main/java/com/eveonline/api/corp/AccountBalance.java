@@ -16,26 +16,32 @@
 
 package com.eveonline.api.corp;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
-public interface AccountBalance extends ApiResult {
+public interface AccountBalance<B extends AccountBalance.Balance> extends ApiListResult<B> {
 
-    /**
-     * @return ID of the account.
-     */
-	long getId();
+    interface Balance extends ApiResult {
 
-    /**
-     * @return Account identifier of corporation wallet division.
-     */
-	int getAccountKey();
+        /**
+         * @return ID of the account.
+         */
+        long getId();
 
-    /**
-     * @return Amount of ISK on the wallet. 
-     */
-	long getBalance();
+        /**
+         * @return Account identifier of corporation wallet division.
+         */
+        int getAccountKey();
+
+        /**
+         * @return Amount of ISK on the wallet.
+         */
+        long getBalance();
+
+    }
 
 }

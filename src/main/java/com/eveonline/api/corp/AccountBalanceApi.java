@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,12 +26,13 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface AccountBalanceApi extends ApiService {
 
+    public static final String XMLPATH = "/corp/AccountBalance.xml.aspx";
+
+
     /**
-     * @param key           EVE-Api credentials.
-     * @param characterId   Character ID of a character with junior accountant or higher access in the corporation
-     *                      you want the balances for.
-     *
+     * @param key full api key
+     * @param characterId Character ID of a character with junior accountant or higher access in the corporation you want the balances for.
      * @return Account balances of every division from a corporation.
      */
-    ApiListResult<AccountBalance> getAccountBalances(FullApiKey key, long characterId) throws ApiException;
+    AccountBalance getAccountBalances(FullApiKey key, long characterId) throws ApiException;
 }
