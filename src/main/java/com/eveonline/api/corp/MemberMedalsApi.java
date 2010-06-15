@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.LimitedApiKey;
 import com.eveonline.api.exceptions.ApiException;
 
@@ -26,5 +25,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MemberMedalsApi {
 
-    ApiListResult<IssuedMedals> getIssuedMedals(LimitedApiKey apiKey, int characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/MemberMedals.xml.aspx";
+
+
+    /**
+     * @param apiKey the limited api key
+     * @param characterId the character's ID
+     * @return list of issued medals
+     * @throws ApiException if an error occurs
+     */
+    MemberMedals getIssuedMedals(LimitedApiKey apiKey, int characterId) throws ApiException;
+
 }
