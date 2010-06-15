@@ -16,9 +16,8 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
-import com.eveonline.api.FullApiKey;
+import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
 
 /**
@@ -27,6 +26,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface TitlesApi extends ApiService{
 
-    ApiListResult<ExtendedTitle> getTitles(FullApiKey apiKey, int characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/Titles.xml.asp";
+
+
+    /**
+     * @param apiKey the director api key
+     * @param characterId the character's ID
+     * @return 
+     * @throws ApiException
+     */
+    Titles getTitles(DirectorApiKey apiKey, int characterId) throws ApiException;
 	
 }
