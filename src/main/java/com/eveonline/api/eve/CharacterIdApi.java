@@ -29,7 +29,7 @@ public interface CharacterIdApi extends ApiService {
 	/**
 	 * @param names a list of names you want to resolve
 	 * @return the list of IDs for the given names
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	CharacterId getCharacterIds(Iterable<String> names) throws ApiException;
 

@@ -21,33 +21,151 @@ import com.eveonline.api.ApiResult;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
-public interface CorporationSheet extends CorporationSheetShort {
+public interface CorporationSheet extends ApiResult {
 
     /**
-     * @return Current member limit.
+     * @return the corporation id.
      */
-    int getMemberLimit();
+    long getId();
 
     /**
-     * @return Corporation divisions names.
+     * @return the corporation name.
      */
-    ApiListResult<CorporationSheet.Division> getDivisions();
+    String getName();
 
     /**
-     * @return Corporation wallet division names.
+     * @return Corp Ticker, often used as a nickname.
      */
-    ApiListResult<CorporationSheet.WalletDivision> getWalletDivisions();
+    String getTicker();
 
     /**
-     * @author Dominik Eckelmann
+     * @return Character id of the CEO.
      */
+    long getCeoId();
+
+    /**
+     * @return Name of the CEO.
+     */
+    String getCeoName();
+
+    /**
+     * @return HQ station id.
+     */
+    long getStationId();
+
+    /**
+     * @return HQ station name.
+     */
+    String getStationName();
+
+    /**
+     * @return Corporation description.
+     */
+    String getDescription();
+
+    /**
+     * @return Corporation homepage URL.
+     */
+    String getUrl();
+
+    /**
+     * @return ID of the alliance the corporation belongs to.
+     */
+    long getAllianceId();
+
+    /**
+     * @return Name of the corporation's alliance.
+     */
+    String getAllianceName();
+
+    /**
+     * @return current tax rate.
+     */
+    float getTaxRate();
+
+    /**
+     * @return Current number of members.
+     */
+    int getMemberCount();
+
+    /**
+     * @return Shares outstanding.
+     */
+    int getShares();
+
+    /**
+     * @return Corporation logo.
+     */
+    CorporationSheet.Logo getLogo();
+
+
+    public interface Logo extends ApiResult {
+
+        /**
+         * @return Corporation ID of the member corporation.
+         */
+        long getGraphicID();
+
+        /**
+         * @return shape ID
+         */
+        long getShape1();
+
+        /**
+         * @return shape ID
+         */
+        long getShape2();
+
+        /**
+         * @return shape ID
+         */
+        long getShape3();
+
+        /**
+         * @return color ID
+         */
+        long getColor1();
+
+        /**
+         * @return color ID
+         */
+        long getColor2();
+
+        /**
+         * @return color ID
+         */
+        long getColor3();
+    }
+
+
+    interface NonpublicCorporationSheet extends CorporationSheet {
+
+        /**
+         * @return Current member limit.
+         */
+        int getMemberLimit();
+
+        /**
+         * @return Corporation divisions names.
+         */
+        ApiListResult<? extends Division> getDivisions();
+
+        /**
+         * @return Corporation wallet division names.
+         */
+        ApiListResult<? extends WalletDivision> getWalletDivisions();
+
+    }
+
+
     public interface Division extends ApiResult {
 
         /**
          * @return Division key. (corporation hangar id).
          */
-       int getAccountKey();
+        int getAccountKey();
 
         /**
          * @return Division name. (corporation hangar name.
@@ -55,9 +173,7 @@ public interface CorporationSheet extends CorporationSheetShort {
         String getDescription();
     }
 
-    /**
-     * @author Dominik Eckelmann
-     */
+
     public interface WalletDivision extends ApiResult {
 
         /**

@@ -31,7 +31,7 @@ public interface MarketOrdersApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return the character's current market orders
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	MarketOrders getMarketOrders(FullApiKey key, long characterId) throws ApiException;
 

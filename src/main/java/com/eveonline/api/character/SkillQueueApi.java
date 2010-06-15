@@ -31,7 +31,7 @@ public interface SkillQueueApi extends ApiService {
 	 * @param key the limited api key
 	 * @param characterId the character's ID
 	 * @return all queued skills
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	SkillQueue getSkillQueue(LimitedApiKey key, long characterId) throws ApiException;
 

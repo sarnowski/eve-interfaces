@@ -30,7 +30,7 @@ public interface CharactersApi extends ApiService {
 	/**
 	 * @param key limited api key
 	 * @return the list of all characters of the key's account
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	Characters getCharacters(LimitedApiKey key) throws ApiException;
 

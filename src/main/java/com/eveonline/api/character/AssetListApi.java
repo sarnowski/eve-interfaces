@@ -31,7 +31,7 @@ public interface AssetListApi extends ApiService {
 	 * @param key full api key
 	 * @param characterId the character's ID
 	 * @return a list of all assets of a character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	AssetList getAssets(FullApiKey key, long characterId) throws ApiException;
 

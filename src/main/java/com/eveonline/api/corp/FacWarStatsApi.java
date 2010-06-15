@@ -26,11 +26,13 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface FacWarStatsApi extends ApiService{
 
+    public static final String XMLPATH = "/corp/FacWarStats.xml.aspx";
+
     /**
-     *
-     * @param apiKey        EVE-Api credentials.
-     * @param characterId   Character ID of a character in the corporation to get the information from.
-     * @return Faction Warfare Statistics or Error 125 if the corporation is not enlisted.
+     * @param apiKey limited api key
+     * @param characterId the character's ID
+     * @return Faction Warfare Statistics
+     * @throws ApiException if an error occurs (Error 125 if the corporation is not enlisted)
      */
-    FacWarStats getFacWarStats(LimitedApiKey apiKey, long characterId ) throws ApiException;
+    FacWarStats getFacWarStats(LimitedApiKey apiKey, long characterId) throws ApiException;
 }

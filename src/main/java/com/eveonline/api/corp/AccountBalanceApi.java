@@ -33,6 +33,7 @@ public interface AccountBalanceApi extends ApiService {
      * @param key full api key
      * @param characterId Character ID of a character with junior accountant or higher access in the corporation you want the balances for.
      * @return Account balances of every division from a corporation.
+     * @throws ApiException if an error occurs
      */
     AccountBalance getAccountBalances(FullApiKey key, long characterId) throws ApiException;
 }

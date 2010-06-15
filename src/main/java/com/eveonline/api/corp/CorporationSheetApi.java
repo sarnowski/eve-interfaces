@@ -26,17 +26,21 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface CorporationSheetApi extends ApiService {
 
-    /**
-     * @param apiKey      Limited API key.
-     * @param characterId Character of the corporation you want the sheet from.
-     * @return a corporation sheet.
-     */
-    CorporationSheet getCorporationSheet(LimitedApiKey apiKey, long characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/CorporationSheet.xml.aspx";
+
 
     /**
-     * @param apiKey            Limited API key.
-     * @param corporationId     Id of the corporation to get the sheet from.
-     * @return a corporation sheet from another corporation.
+     * @param apiKey the limited api key
+     * @param characterId the character's ID
+     * @return a corporation sheet.
+     * @throws ApiException if an error occurs
      */
-    CorporationSheetShort getCorporationSheetShort(LimitedApiKey apiKey, long corporationId) throws ApiException;
+    CorporationSheet.NonpublicCorporationSheet getCorporationSheet(LimitedApiKey apiKey, long characterId) throws ApiException;
+
+    /**
+     * @param corporationId the corporations ID
+     * @return a corporation sheet from another corporation.
+     * @throws ApiException if an error occurs
+     */
+    CorporationSheet getCorporationSheet(long corporationId) throws ApiException;
 }

@@ -31,7 +31,7 @@ public interface CharacterSheetApi extends ApiService {
 	 * @param key the limited api key
 	 * @param characterId the character's ID
 	 * @return detailed informations about a character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	CharacterSheet getCharacterSheet(LimitedApiKey key, long characterId) throws ApiException;
 

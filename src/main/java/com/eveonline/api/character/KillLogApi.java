@@ -31,7 +31,7 @@ public interface KillLogApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return a list of all kills
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	KillLog getKillLogs(FullApiKey key, long characterId) throws ApiException;
 
@@ -40,7 +40,7 @@ public interface KillLogApi extends ApiService {
 	 * @param characterId the character's ID
 	 * @param beforeKillId the kill's ID for kills to show after
 	 * @return a list of kills before killID
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	KillLog getKillLogs(FullApiKey key, long characterId, long beforeKillId) throws ApiException;
 

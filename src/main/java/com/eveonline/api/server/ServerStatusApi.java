@@ -28,7 +28,7 @@ public interface ServerStatusApi extends ApiService {
 
 	/**
 	 * @return informations about the current server's status
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	ServerStatus getServerStatus() throws ApiException;
 

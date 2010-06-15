@@ -31,7 +31,7 @@ public interface IndustryJobsApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return list of all industry jobs, owned by the character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	IndustryJobs getIndustryJobs(FullApiKey key, long characterId) throws ApiException;
 

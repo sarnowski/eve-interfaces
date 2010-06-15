@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,10 +26,14 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MarketOrdersApi extends ApiService {
 
+    public static final String XMLPATH = "/corp/MarketOrders.xml.aspx";
+
+
     /**
-     * @param apiKey        Api Credentials
-     * @param characterId   characterID of character with Junior Accountant, Trader or higher role in corporation.
-     * @return List of active and expired market orders. maximum time for expired orders is one week. 
+     * @param apiKey the full api key
+     * @param characterId ID of character with Junior Accountant, Trader or higher role in corporation.
+     * @return List of active and expired market orders. maximum time for expired orders is one week.
+     * @throws ApiException if an error occurs 
      */
-    ApiListResult<MarketOrder> getOrders(FullApiKey apiKey, long characterId) throws ApiException;
+    MarketOrders getMarketOrders(FullApiKey apiKey, long characterId) throws ApiException;
 }

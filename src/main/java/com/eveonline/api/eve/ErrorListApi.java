@@ -28,7 +28,7 @@ public interface ErrorListApi extends ApiService {
 
 	/**
 	 * @return a list of all server errors which can occur
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	ErrorList getErrorList() throws ApiException;
 

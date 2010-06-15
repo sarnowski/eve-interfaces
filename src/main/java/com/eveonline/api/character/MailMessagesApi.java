@@ -31,7 +31,7 @@ public interface MailMessagesApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return a list of mail messages of the character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	MailMessages getMailMessages(FullApiKey key, long characterId) throws ApiException;
 

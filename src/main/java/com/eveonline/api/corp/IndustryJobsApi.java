@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,10 +26,14 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface IndustryJobsApi extends ApiService {
 
+    public static final String XMLPATH = "/corp/IndustryJobs.xml.aspx";
+
+
     /**
-     * @param apiKey api credentials
-     * @param characterId characterID of a character that must have the role 'Factory Manager'.
+     * @param apiKey the full api key
+     * @param characterId ID of a character that must have the role 'Factory Manager'.
      * @return Industry jobs.
+     * @throws ApiException if an error occurs
      */
-    ApiListResult<IndustryJob> getJobs(FullApiKey apiKey, long characterId) throws ApiException;
+    IndustryJobs getJobs(FullApiKey apiKey, long characterId) throws ApiException;
 }

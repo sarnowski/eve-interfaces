@@ -30,11 +30,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ContactListApi extends ApiService {
 
+    public static final String XMLPATH = "/corp/ContactList.xml.aspx";
+    
+
     /**
-     * @param apiKey        EVE-Api credentials.
-     * @param characterId   CharacterId of a character in the corporation.
-     * @return Contact list of corporation from the given character. 
+     * @param apiKey a full api key
+     * @param characterId the character's ID
+     * @return Contact list of corporation from the given character.
+     * @throws ApiException if an error occurs 
      */
-	Contact.ContactList getContactList(FullApiKey apiKey, long characterId) throws ApiException;
+	ContactList getContactList(FullApiKey apiKey, long characterId) throws ApiException;
 
 }

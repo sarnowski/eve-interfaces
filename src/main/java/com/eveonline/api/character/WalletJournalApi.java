@@ -31,7 +31,7 @@ public interface WalletJournalApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return list of wallet entries
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	WalletJournal getWalletJournal(FullApiKey key, long characterId) throws ApiException;
 
@@ -40,7 +40,7 @@ public interface WalletJournalApi extends ApiService {
 	 * @param characterId the character's ID
 	 * @param beforeRefId list entries before this ID
 	 * @return list of wallet entries
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	WalletJournal getWalletJournal(FullApiKey key, long characterId, long beforeRefId) throws ApiException;
 

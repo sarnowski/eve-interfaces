@@ -22,6 +22,7 @@ import java.util.Date;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
 public interface FacWarStats extends ApiResult{
 
@@ -63,15 +64,15 @@ public interface FacWarStats extends ApiResult{
     /**
      * @return victory points yesterday.
      */
-    int getVictoryPointsYesterday();
+    long getVictoryPointsYesterday();
 
     /**
      * @return victory points from last week.
      */
-    int getVictoryPointsLastWeek();
+    long getVictoryPointsLastWeek();
 
     /**
      * @return total victory points.
      */
-    int getVictoryPointsTotal();
+    long getVictoryPointsTotal();
 }

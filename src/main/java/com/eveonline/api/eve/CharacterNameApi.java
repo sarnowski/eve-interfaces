@@ -29,7 +29,7 @@ public interface CharacterNameApi extends ApiService {
 	/**
 	 * @param ids a list of IDs to resolve
 	 * @return the list of found names
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	CharacterName getCharacterNames(Iterable<Long> ids) throws ApiException;
 

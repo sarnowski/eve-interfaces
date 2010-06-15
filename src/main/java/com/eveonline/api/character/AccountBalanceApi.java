@@ -31,7 +31,7 @@ public interface AccountBalanceApi extends ApiService {
 	 * @param key full api key
 	 * @param characterId the character's ID
 	 * @return the ISK balance of a character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	AccountBalance getAccountBalances(FullApiKey key, long characterId) throws ApiException;
 

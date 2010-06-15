@@ -30,7 +30,7 @@ public interface CharacterPortraitApi extends ApiService {
 	 * @param characterId the character's ID
 	 * @param size Size can be 64x64px or 256x264px
 	 * @return a JPEG encoded image of the character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	CharacterPortrait getCharacterPortrait(long characterId, PortraitSize size) throws ApiException;
 

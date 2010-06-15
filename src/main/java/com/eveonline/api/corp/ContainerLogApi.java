@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,10 +26,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface ContainerLogApi extends ApiService {
 
+    public static final String XMLPATH = "/corp/ContainerLog.xml.aspx";
+
+
     /**
-     * @param apiKey        EVE-Api credentials.
-     * @param characterId   Character ID from a character in the corporation.
+     * @param apiKey the full api key
+     * @param characterId the character's ID
      * @return Container logs.
+     * @throws ApiException if an error occurs
      */
-    ApiListResult<ContainerLog> getContainerLog(FullApiKey apiKey, long characterId) throws ApiException;
+    ContainerLog getContainerLog(FullApiKey apiKey, long characterId) throws ApiException;
+
 }

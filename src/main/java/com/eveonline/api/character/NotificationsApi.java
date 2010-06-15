@@ -31,7 +31,7 @@ public interface NotificationsApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return all notification's of the character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	Notifications getNotifications(FullApiKey key, long characterId) throws ApiException;
 

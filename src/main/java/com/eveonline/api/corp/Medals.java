@@ -16,6 +16,7 @@
 
 package com.eveonline.api.corp;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 import java.util.Date;
@@ -23,30 +24,34 @@ import java.util.Date;
 /**
  * @author Dominik Eckelmann
  */
-public interface Medal extends ApiResult {
+public interface Medals<M extends Medals.Medal> extends ApiListResult<M> {
 
-    /**
-     * @return unique id for the medal.
-     */
-    long getId();
+    interface Medal extends ApiResult {
 
-    /**
-     * @return In-game display title.
-     */
-    String getTitle();
+        /**
+         * @return unique id for the medal.
+         */
+        long getId();
 
-    /**
-     * @return Description what the medal is for.
-     */
-    String getDescription();
+        /**
+         * @return In-game display title.
+         */
+        String getTitle();
 
-    /**
-     * @return Creator character of the medal.
-     */
-    long getCreatorId();
+        /**
+         * @return Description what the medal is for.
+         */
+        String getDescription();
 
-    /**
-     * @return date of creation.
-     */
-    Date getCreated();
+        /**
+         * @return Creator character of the medal.
+         */
+        long getCreatorId();
+
+        /**
+         * @return date of creation.
+         */
+        Date getCreated();
+
+    }
 }

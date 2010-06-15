@@ -20,7 +20,6 @@
  */
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -31,11 +30,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface AssetListApi extends ApiService {
 
+    public static final String XMLPATH = "/corp/AssetList.xml.aspx";
+
+
     /**
-     * @param key           EVE-Api credentials from a director or CEO
-     * @param characterId   Character ID of the director/CEO
-     * @return Container with all Assets from the corporation. 
+     * @param key a directory api key
+     * @param characterId the character's ID
+     * @return Container with all Assets from the corporation.
+     * @throws ApiException if an error occurs 
      */
-	ApiListResult<Asset.Container> getAssets(DirectorApiKey key, long characterId) throws ApiException;
+	AssetList getAssets(DirectorApiKey key, long characterId) throws ApiException;
 
 }

@@ -31,7 +31,7 @@ public interface MedalsApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return a list of all medals
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	Medals getMedals(FullApiKey key, long characterId) throws ApiException;
 

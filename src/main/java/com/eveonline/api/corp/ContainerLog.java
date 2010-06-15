@@ -16,78 +16,82 @@
 
 package com.eveonline.api.corp;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 import java.util.Date;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
-public interface ContainerLog extends ApiResult{
+public interface ContainerLog<L extends ContainerLog.Log> extends ApiListResult<L> {
 
-    /**
-     * @return Time of the logentry.
-     */
-    Date getLogTime();
+    interface Log extends ApiResult {
 
-    /**
-     * @return Item the entry belongs to.
-     */
-    long getItemId();
+        /**
+         * @return Time of the logentry.
+         */
+        Date getLogTime();
 
-    /**
-     * @return Item type ID.
-     */
-    long getItemTypeId();
+        /**
+         * @return Item the entry belongs to.
+         */
+        long getItemId();
 
-    /**
-     * @return ID of the character that made the change.
-     */
-    long getActorId();
+        /**
+         * @return Item type ID.
+         */
+        long getItemTypeId();
 
-    /**
-     * @return Name of the character that made the change. 
-     */
-    String getActorName();
+        /**
+         * @return ID of the character that made the change.
+         */
+        long getActorId();
 
-    /*
-     * @return Storage location.
-     * @see http://wiki.eve-id.net/API_Inventory_Flags
-     */
-    int getFlag();
+        /**
+         * @return Name of the character that made the change.
+         */
+        String getActorName();
 
-    /**
-     * @return Location ID of the container the log belongs to.
-     */
-    long getLocationId();
+        /*
+        * @return invFlags
+        */
+        int getFlag();
 
-    /**
-     * @return What happened to the container.
-     */
-    String getAction();
+        /**
+         * @return Location ID of the container the log belongs to.
+         */
+        long getLocationId();
 
-    /**
-     * @return Which password type was changed. Config or Container.
-     */
-    String getPasswordType();
+        /**
+         * @return What happened to the container.
+         */
+        String getAction();
 
-    /**
-     * @return the container item type ID.
-     */
-    long getTypeId();
+        /**
+         * @return Which password type was changed. Config or Container.
+         */
+        String getPasswordType();
 
-    /**
-     * @return Quantity of modified items.
-     */
-    long getQuantity();
+        /**
+         * @return the container item type ID.
+         */
+        long getTypeId();
 
-    /**
-     * @return new Flag option?
-     */
-    int getOldConfiguration();
+        /**
+         * @return Quantity of modified items.
+         */
+        long getQuantity();
 
-    /**
-     * @return old Flag option?
-     */
-    int getNewConfiguration();
+        /**
+         * @return new Flag option?
+         */
+        int getOldConfiguration();
+
+        /**
+         * @return old Flag option?
+         */
+        int getNewConfiguration();
+    }
 }

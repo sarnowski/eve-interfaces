@@ -28,7 +28,7 @@ public interface SkillTreeApi extends ApiService {
 
 	/**
 	 * @return the complete skilltree available ingame
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	SkillTree getSkillTree() throws ApiException;
 

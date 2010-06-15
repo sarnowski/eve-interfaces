@@ -28,7 +28,7 @@ public interface RefTypesApi extends ApiService {
 
 	/**
 	 * @return a list of transaction types used in the Journal Entries
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	RefTypes getRefTypes() throws ApiException;
 

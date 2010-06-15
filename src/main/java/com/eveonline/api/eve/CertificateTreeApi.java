@@ -28,7 +28,7 @@ public interface CertificateTreeApi extends ApiService {
 
     /**
      * @return a list of all certificates, grouped by categories and classes
-     * @throws ApiException
+     * @throws ApiException if an error occurs
      */
 	CertificateTree getCertificateTree() throws ApiException;
 

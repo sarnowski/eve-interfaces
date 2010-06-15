@@ -28,7 +28,7 @@ public interface FacWarTopStatsApi extends ApiService {
 
 	/**
 	 * @return statistics about the best faction warfare parties
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	FacWarTopStats getFactionWarfareTopStatistics() throws ApiException;
 

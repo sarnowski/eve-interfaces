@@ -31,7 +31,7 @@ public interface ContactListApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return a list of all contacts of a character
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	ContactList getContactList(FullApiKey key, long characterId) throws ApiException;
 

@@ -31,15 +31,16 @@ public interface WalletTransactionsApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return all wallet transactions
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	WalletTransactions getWalletTransactions(FullApiKey key, long characterId) throws ApiException;
 
 	/**
 	 * @param key the full api key
 	 * @param characterId the character's ID
+     * @param beforeTransactionId list of transaction before this ID
 	 * @return all wallet transactions
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	WalletTransactions getWalletTransactions(FullApiKey key, long characterId, long beforeTransactionId) throws ApiException;
 

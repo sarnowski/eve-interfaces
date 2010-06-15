@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.LimitedApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,12 +26,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MedalsApi extends ApiService {
 
+    public static final String XMLPATH = "/corp/Medals.xml.aspx";
+
+
     /**
-     * @param apiKey        EVE-Api credentials.
-     * @param characterIds  Character ID from a Character of the corporation.
-     * @return All availible Medals.
-     * @throws ApiException
+     * @param apiKey the limited api key
+     * @param characterIds the character's ID
+     * @return All available Medals.
+     * @throws ApiException if an error occurs
      */
-    ApiListResult<Medal> getMedals(LimitedApiKey apiKey, long characterIds) throws ApiException;
+    Medals getMedals(LimitedApiKey apiKey, long characterIds) throws ApiException;
 
 }

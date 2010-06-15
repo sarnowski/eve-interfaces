@@ -31,7 +31,7 @@ public interface StandingsApi extends ApiService {
 	 * @param key the limited api key
 	 * @param characterId the character's ID
 	 * @return list of standings
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	Standings getStandings(LimitedApiKey key, int characterId) throws ApiException;
 

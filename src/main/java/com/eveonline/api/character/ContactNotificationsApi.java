@@ -31,7 +31,7 @@ public interface ContactNotificationsApi extends ApiService {
 	 * @param key the full api key
 	 * @param characterId the character's ID
 	 * @return the character's contact notifications
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	ContactNotifications getContactNotifications(FullApiKey key, long characterId) throws ApiException;
 

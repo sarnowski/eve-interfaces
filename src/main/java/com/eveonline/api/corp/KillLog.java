@@ -25,186 +25,181 @@ import java.util.Date;
  * @author Tobias Sarnowski
  * @author Dominik Eckelmann
  */
-public interface KillLog extends ApiResult {
+public interface KillLog<K extends KillLog.Kill> extends ApiListResult<K> {
 
-    /**
-     * Unique kill id.
-     *
-     * You can use this id as beforeKillId in {@link KillLogApi#getKillLogs(com.eveonline.api.DirectorApiKey, long, long)}.
-     * @return unique id of the kill.
-     */
-	long getId();
+    interface Kill extends ApiResult {
 
-    /**
-     * @return The ID of the solar system the kill occurred in.
-     */
-	long getSolarSystem();
+        /**
+         * Unique kill id.
+         *
+         * You can use this id as beforeKillId in {@link KillLogApi#getKillLogs(com.eveonline.api.DirectorApiKey, long, long)}.
+         * @return unique id of the kill.
+         */
+        long getId();
 
-    /**
-     * @return Time the kill occurred.
-     */
-	Date getKillTime();
+        /**
+         * @return The ID of the solar system the kill occurred in.
+         */
+        long getSolarSystem();
 
-    /**
-     * Moon location id.
-     *
-     * Normally populated on a POS los. It is not guaranteed it is present.
-     *
-     * @return Moon location id.
-     */
-	long getMoonId();
+        /**
+         * @return Time the kill occurred.
+         */
+        Date getKillTime();
 
-    /**
-     * @return get the Victim information.
-     */
-	Victim getVictim();
+        /**
+         * Moon location id.
+         *
+         * Normally populated on a POS los. It is not guaranteed it is present.
+         *
+         * @return Moon location id.
+         */
+        long getMoonId();
 
-    /**
-     * @return get Attacker information.
-     */
-	ApiListResult<Attacker> getAttackers();
+        /**
+         * @return get the Victim information.
+         */
+        Victim getVictim();
 
-    /**
-     * @return Item the victim carried.
-     */
-	ApiListResult<Item> getItems();
+        /**
+         * @return get Attacker information.
+         */
+        ApiListResult<? extends Attacker> getAttackers();
 
-	/**
-	 * @author Tobias Sarnowski
-     * @author Dominik Eckelmann
-	 */
-	interface Attacker extends ApiResult {
+        /**
+         * @return Item the victim carried.
+         */
+        ApiListResult<? extends Item> getItems();
+
+    }
+
+
+    interface Attacker extends ApiResult {
 
         /**
          * @return ID of the attacker.
          */
-		long getCharacterId();
+        long getCharacterId();
 
         /**
          * @return Name of the attacker.
          */
-		String getCharacterName();
+        String getCharacterName();
 
         /**
          * @return Corporation id of the attacker's corporation.
          */
-		long getCorporationId();
+        long getCorporationId();
 
         /**
          * @return Corporation name of the attacker.
          */
-		String getCorporationName();
+        String getCorporationName();
 
         /**
          * @return the alliance id of the attacker.
          */
-		long getAllianceId();
+        long getAllianceId();
 
         /**
          * @return the attackers alliance name.
          */
-		String getAllianceName();
+        String getAllianceName();
 
         /**
          * @return security status of the attacker.
          */
-		float getSecurityStatus();
+        float getSecurityStatus();
 
         /**
          * @return damage done by the attacker.
          */
-		long getDamageDone();
+        long getDamageDone();
 
         /**
          * @return indicates if he lead the final blow.
          */
-		boolean hadFinalBlow();
+        boolean hadFinalBlow();
 
         /**
          * @return Weapon ID the attacker use. Sometimes it can be a ship or missile.
          */
-		long getWeaponTypeId();
+        long getWeaponTypeId();
 
         /**
          * @return ship of the attacker.
          */
-		long getShipTypeId();
+        long getShipTypeId();
 
-	}
+    }
 
-	/**
-	 * @author Tobias Sarnowski
-     * @author Dominik Eckelmann
-	 */
-	interface Item extends ApiResult {
+
+    interface Item extends ApiResult {
 
         /**
          * @return the item id.
          */
-		long getTypeId();
+        long getTypeId();
 
         /**
          * @return Inventory flags of the item.
          */
-		int getFlag();
+        int getFlag();
 
         /**
          * @return how much of the items dropped.
          */
-		long getQuantityDropped();
+        long getQuantityDropped();
 
         /**
          * @return how much of the item get destroyed.
          */
-		long getQuantityDestroyed();
+        long getQuantityDestroyed();
 
         /**
          * @return get the items that contains other items.
          */
-		ApiListResult<Item> getContainingItems();
+        ApiListResult<? extends Item> getContainingItems();
 
-	}
+    }
 
-	/**
-	 * @author Tobias Sarnowski
-     * @author Dominik Eckelmann
-	 */
-	interface Victim extends ApiResult {
+
+    interface Victim extends ApiResult {
 
         /**
          * @return the victim's character id.
          */
-		long getCharacterId();
+        long getCharacterId();
 
         /**
          * @return the victim's name.
          */
-		String getCharacterName();
+        String getCharacterName();
 
         /**
          * @return the victim's corporation id.
          */
-		long getCorporationId();
+        long getCorporationId();
 
         /**
          * @return the victim's corporation name.
          */
-		String getCorporationName();
+        String getCorporationName();
 
         /**
          * @return the victim's alliance id.
          */
-		long getAllianceId();
+        long getAllianceId();
 
         /**
          * @return total amount of taken damage.
          */
-		long getDamageTaken();
+        long getDamageTaken();
 
         /**
          * @return destroyed ship of the victim.
          */
-		long getShipTypeId();
+        long getShipTypeId();
 
-	}
+    }
 }

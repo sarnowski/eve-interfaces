@@ -28,7 +28,7 @@ public interface ConquerableStationListApi extends ApiService {
 
 	/**
 	 * @return a list of all ocnquereable stations and their status
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	ConquerableStationList getConquerableStations() throws ApiException;
 

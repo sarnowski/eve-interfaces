@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,19 +26,24 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface KillLogApi extends ApiService {
 
-    /**
-     * @param key           EVE-Api credentials.
-     * @param characterId   characterID from the CEO.
-     * @return 100 most recent kill log entries.
-     */
-	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/KillLog.xml.aspx";
+
 
     /**
-     * @param key           EVE-Api credentials.
-     * @param characterId   characterID from the CEO.
+     * @param key the directory api key
+     * @param characterId the character's ID
+     * @return 100 most recent kill log entries.
+     * @throws ApiException if an error occurs
+     */
+	KillLog getKillLogs(DirectorApiKey key, long characterId) throws ApiException;
+
+    /**
+     * @param key the directory api key
+     * @param characterId the character's ID
      * @param beforeKillId  A killId to start from.
      * @return 100 most recent kill log entries starting from beforeKillId.
+     * @throws ApiException if an error occurs
      */
-	ApiListResult<KillLog> getKillLogs(DirectorApiKey key, long characterId, long beforeKillId) throws ApiException;
+	KillLog getKillLogs(DirectorApiKey key, long characterId, long beforeKillId) throws ApiException;
 
 }

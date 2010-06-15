@@ -31,7 +31,7 @@ public interface SkillInTrainingApi extends ApiService {
 	 * @param key the limited api key
 	 * @param characterId the character's ID
 	 * @return the current skill in training
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	SkillInTraining getSkillInTraining(LimitedApiKey key, long characterId) throws ApiException;
 

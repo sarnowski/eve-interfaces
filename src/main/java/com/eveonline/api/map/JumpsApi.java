@@ -28,7 +28,7 @@ public interface JumpsApi extends ApiService {
 
 	/**
 	 * @return a list of all systems with a minimum of one jump
-	 * @throws ApiException
+	 * @throws ApiException if an error occurs
 	 */
 	Jumps getJumps() throws ApiException;
 
