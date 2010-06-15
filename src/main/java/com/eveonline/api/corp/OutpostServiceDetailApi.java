@@ -16,11 +16,16 @@
 
 package com.eveonline.api.corp;
 
+import com.eveonline.api.ApiService;
+
 /**
  * TODO Not yet implemented
  * 
  * @author Dominik Eckelmann
  * @author Tobias Sarnowski
  */
-public interface OutpostServiceDetailApi {
+public interface OutpostServiceDetailApi extends ApiService {
+
+    public static final String XMLPATH = "/corp/OutpostServiceDetail.xml.aspx";
+
 }
