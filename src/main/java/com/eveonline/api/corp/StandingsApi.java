@@ -25,7 +25,7 @@ import com.eveonline.api.exceptions.ApiException;
  * @author Dominik Eckelmann
  * @author Tobias Sarnowski
  */
-public interface StandingsApi extends ApiService{
+public interface StandingsApi extends ApiService {
 
     public static final String XMLPATH = "/corp/Standings.xml.aspx";
 

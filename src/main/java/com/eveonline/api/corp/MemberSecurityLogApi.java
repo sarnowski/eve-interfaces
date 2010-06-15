@@ -24,7 +24,7 @@ import com.eveonline.api.exceptions.ApiException;
  * @author Dominik Eckelmann
  * @author Tobias Sarnowski
  */
-public interface MemberSecurityLogApi extends ApiService{
+public interface MemberSecurityLogApi extends ApiService {
 
     public static final String XMLPATH = "/corp/MemberSecurityLog.xml.aspx";
 

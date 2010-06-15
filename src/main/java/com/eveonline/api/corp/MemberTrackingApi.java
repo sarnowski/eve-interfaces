@@ -16,7 +16,7 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiResult;
+import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
 
@@ -24,7 +24,7 @@ import com.eveonline.api.exceptions.ApiException;
  * @author Dominik Eckelmann
  * @author Tobias Sarnowski
  */
-public interface MemberTrackingApi extends ApiResult{
+public interface MemberTrackingApi extends ApiService {
 
     public static final String XMLPATH = "/corp/MemberTracking.xml.aspx";
 

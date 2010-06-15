@@ -16,6 +16,7 @@
 
 package com.eveonline.api.corp;
 
+import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
 
@@ -23,7 +24,7 @@ import com.eveonline.api.exceptions.ApiException;
  * @author Dominik Eckelmann
  * @author Tobias Sarnowski
  */
-public interface StarbaseDetailApi {
+public interface StarbaseDetailApi extends ApiService {
 
     public static final String XMLPATH = "/corp/StarbaseDetail.xml.aspx";
 
