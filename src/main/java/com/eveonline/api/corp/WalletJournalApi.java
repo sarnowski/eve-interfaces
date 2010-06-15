@@ -16,32 +16,36 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
-
-import java.math.BigInteger;
 
 /**
  * @author Dominik Eckelmann
  * @author Tobias Sarnowski
  */
 public interface WalletJournalApi extends ApiService {
+
+    public static final String XMLPATH = "/corp/WalletJournal.xml.aspx";
+
+
     /**
      * @param apiKey api credentials
      * @param characterId characterID of character with Junior Accountant or higher role. 
      * @param accountKey Use /corp/AccountBalance.xml.aspx to determine which accountKey corresponds to each corporate wallet.
-     * @return
+     * @return the wallet journal
+     * @throws ApiException if an error occurs
      */
-    ApiListResult<WalletJournalEntry> getWalletJournal(FullApiKey apiKey, int characterId, int accountKey) throws ApiException;
+    WalletJournal getWalletJournal(FullApiKey apiKey, long characterId, int accountKey) throws ApiException;
 
     /**
      * @param apiKey api credentials
      * @param characterId characterID of character with Junior Accountant or higher role.
      * @param accountKey Use /corp/AccountBalance.xml.aspx to determine which accountKey corresponds to each corporate wallet.
      * @param beforeRefId Used for walking the journal backwards to get more entries; see Journal Walking, below. 
-     * @return
+     * @return the wallet journal
+     * @throws ApiException if an error occurs
      */
-    ApiListResult<WalletJournalEntry> getWalletJournal(FullApiKey apiKey, int characterId, int accountKey, BigInteger beforeRefId) throws ApiException;
+    WalletJournal getWalletJournal(FullApiKey apiKey, long characterId, int accountKey, long beforeRefId) throws ApiException;
+
 }

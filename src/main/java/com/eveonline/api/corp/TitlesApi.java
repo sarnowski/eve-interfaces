@@ -26,7 +26,7 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface TitlesApi extends ApiService{
 
-    public static final String XMLPATH = "/corp/Titles.xml.asp";
+    public static final String XMLPATH = "/corp/Titles.xml.aspx";
 
 
     /**

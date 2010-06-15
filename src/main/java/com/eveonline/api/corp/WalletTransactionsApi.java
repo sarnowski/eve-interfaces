@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 import com.eveonline.api.FullApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,8 +26,26 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface WalletTransactionsApi extends ApiResult {
 
-    ApiListResult<Transaction> getTransactions(FullApiKey apiKey, int characterId, int accountKey) throws ApiException;
+    public static final String XMLPATH = "/corp/WalletTransactions.xml.aspx";
 
-    ApiListResult<Transaction> getTransactions(FullApiKey apiKey, int characterId, int accountKey, int beforeTransId) throws ApiException;
+
+    /**
+     * @param apiKey the full api key
+     * @param characterId the character's ID
+     * @param accountKey the accountKey
+     * @return the wallet transactions
+     * @throws ApiException if an error occurs
+     */
+    WalletTransactions getWalletTransactions(FullApiKey apiKey, long characterId, int accountKey) throws ApiException;
+
+    /**
+     * @param apiKey the full api key
+     * @param characterId the character's ID
+     * @param accountKey the accountKey
+     * @param beforeTransId list all transaction before this transaction ID
+     * @return the wallet transactions
+     * @throws ApiException if an error occurs
+     */
+    WalletTransactions getWalletTransactions(FullApiKey apiKey, long characterId, int accountKey, long beforeTransId) throws ApiException;
 
 }

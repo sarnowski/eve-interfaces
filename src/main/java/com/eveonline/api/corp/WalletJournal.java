@@ -25,46 +25,64 @@ import java.util.Date;
  * @author Tobias Sarnowski
  * @author Dominik Eckelmann
  */
-public interface StarbaseList<S extends StarbaseList.Starbase> extends ApiListResult<S> {
+public interface WalletJournal<E extends WalletJournal.Entry> extends ApiListResult<E> {
 
-    interface Starbase extends ApiResult {
-
-        /**
-         * @return the starbase's ID
-         */
-        long getId();
+    interface Entry extends ApiResult {
 
         /**
-         * @return the starbase's typeID
+         * @return when the entry was
          */
-        long getTypeId();
+        Date getDate();
 
         /**
-         * @returnthe starbase's location
+         * @return the reference ID
          */
-        long getLocationId();
+        long getRefId();
 
         /**
-         * @return the starbase's moon ID
+         * @return the reference typeID
          */
-        long getMoonId();
+        long getRefTypeId();
 
         /**
-         * @return the starbase's state
+         * @return get first owner's name
          */
-        int getState();
+        String getOwnerName1();
 
         /**
-         * @return when the state changed to current
+         * @return get first owner's ID
          */
-        Date getStateTimestamp();
+        long getOwnerId1();
 
         /**
-
-         * @return when the starbase went/goes online
+         * @return get second owner's name
          */
-        Date getOnlineTimestamp();
+        String getOwnerName2();
+
+        /**
+         * @return get second owner's ID
+         */
+        long getOwnerId2();
+
+        /**
+         * @return get first owner's argument name
+         */
+        String getArgName1();
+
+        /**
+         * @return the amount
+         */
+        long getAmount();
+
+        /**
+         * @return the ISK *100
+         */
+        long getBallance();
+
+        /**
+         * @return the reason
+         */
+        String getReason();
 
     }
-
 }

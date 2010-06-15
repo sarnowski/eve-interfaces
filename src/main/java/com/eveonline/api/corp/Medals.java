@@ -23,6 +23,7 @@ import java.util.Date;
 
 /**
  * @author Dominik Eckelmann
+ * @author Tobias Sarnowski
  */
 public interface Medals<M extends Medals.Medal> extends ApiListResult<M> {
 

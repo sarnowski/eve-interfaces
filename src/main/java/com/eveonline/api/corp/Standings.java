@@ -19,6 +19,10 @@ package com.eveonline.api.corp;
 import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
+/**
+ * @author Tobias Sarnowski
+ * @author Dominik Eckelmann
+ */
 public interface Standings extends ApiResult {
 
     CorporationStandings getCorporationStandings();

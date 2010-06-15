@@ -21,6 +21,10 @@ import com.eveonline.api.ApiResult;
 
 import java.util.Date;
 
+/**
+ * @author Tobias Sarnowski
+ * @author Dominik Eckelmann
+ */
 public interface MemberTracking<M extends MemberTracking.Member> extends ApiListResult<M> {
 
     interface Member extends ApiResult {
