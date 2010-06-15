@@ -34,6 +34,6 @@ public interface MemberMedalsApi {
      * @return list of issued medals
      * @throws ApiException if an error occurs
      */
-    MemberMedals getIssuedMedals(LimitedApiKey apiKey, int characterId) throws ApiException;
+    MemberMedals getIssuedMedals(LimitedApiKey apiKey, long characterId) throws ApiException;
 
 }

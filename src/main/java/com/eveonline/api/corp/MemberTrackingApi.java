@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,6 +26,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MemberTrackingApi extends ApiResult{
 
-    ApiListResult<Member> getMembers(DirectorApiKey apiKey, int characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/MemberTracking.xml.aspx";
+
+
+    /**
+     * @param apiKey the director api key
+     * @param characterId the character's ID
+     * @return list of tracked members
+     * @throws ApiException is an error occurs
+     */
+    MemberTracking getMemberTracking(DirectorApiKey apiKey, long characterId) throws ApiException;
 
 }

@@ -16,7 +16,7 @@
 
 package com.eveonline.api.corp;
 
-public interface ExtendedRole extends Role {
+public interface ExtendedRole extends MemberSecurity.Role {
 
     String getDescription();
 }

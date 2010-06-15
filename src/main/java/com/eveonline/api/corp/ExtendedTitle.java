@@ -18,7 +18,7 @@ package com.eveonline.api.corp;
 
 import com.eveonline.api.ApiListResult;
 
-public interface ExtendedTitle extends Title {
+public interface ExtendedTitle extends MemberSecurity.Title {
 
     ApiListResult<ExtendedRole> getRoles();
     ApiListResult<ExtendedRole> getGrantableRoles();

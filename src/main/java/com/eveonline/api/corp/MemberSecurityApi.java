@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,5 +26,14 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MemberSecurityApi extends ApiService{
 
-    ApiListResult<Roles> getRoles(DirectorApiKey apiKey, int characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/MemberSecurity.xml.aspx";
+
+
+    /**
+     * @param apiKey the director api key
+     * @param characterId the character's ID
+     * @return a list of roles
+     * @throws ApiException if an error occurs
+     */
+    MemberSecurity getMemberSecurity(DirectorApiKey apiKey, long characterId) throws ApiException;
 }

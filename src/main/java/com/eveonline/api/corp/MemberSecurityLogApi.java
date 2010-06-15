@@ -16,7 +16,6 @@
 
 package com.eveonline.api.corp;
 
-import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiService;
 import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
@@ -27,7 +26,15 @@ import com.eveonline.api.exceptions.ApiException;
  */
 public interface MemberSecurityLogApi extends ApiService{
 
-    ApiListResult<RoleHistory> getRoleHistory(DirectorApiKey apiKey, int characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/MemberSecurityLog.xml.aspx";
 
+
+    /**
+     * @param apiKey the directory api key
+     * @param characterId the character's ID
+     * @return the role history
+     * @throws ApiException if an error occurs
+     */
+    MemberSecurityLog getRoleHistory(DirectorApiKey apiKey, long characterId) throws ApiException;
 
 }
