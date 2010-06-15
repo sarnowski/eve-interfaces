@@ -17,15 +17,25 @@
 package com.eveonline.api.corp;
 
 import com.eveonline.api.ApiService;
-import com.eveonline.api.DirectorApiKey;
 import com.eveonline.api.exceptions.ApiException;
 
 /**
+ * Not yet implemented (Standings have to be reviewed heavily)
+ *
  * @author Dominik Eckelmann
  * @author Tobias Sarnowski
  */
 public interface StandingsApi extends ApiService{
 
-    Standings getStandings(DirectorApiKey apiKey, int characterId) throws ApiException;
+    public static final String XMLPATH = "/corp/Standings.xml.aspx";
+
+
+    /**
+     * @param apiKey the directory api key
+     * @param characterId the character's ID
+     * @return list of standings
+     * @throws ApiException if an error occurs
+     */
+    //Standings getStandings(DirectorApiKey apiKey, long characterId) throws ApiException;
 	
 }

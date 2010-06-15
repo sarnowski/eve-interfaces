@@ -16,10 +16,111 @@
 
 package com.eveonline.api.corp;
 
+import com.eveonline.api.ApiListResult;
 import com.eveonline.api.ApiResult;
 
 public interface Standings extends ApiResult {
+
     CorporationStandings getCorporationStandings();
 
     AllianceStandings getAllianceStandings();
+
+    interface CorporationStandings extends ApiResult{
+        StandingsTo getStandingsTo();
+
+        StandingsFrom getStandingsFrom();
+    }
+
+    interface StandingsTo extends ApiResult{
+        ApiListResult<CharacterStandingTo> getCharacterStandingTo();
+
+        ApiListResult<CorporationStandingTo> getCorporationStandingTo();
+
+        ApiListResult<AlliancesStandingTo> getAlliancesStandingTo();
+    }
+
+    interface StandingsFrom extends ApiResult{
+        ApiListResult<AgentStandingsFrom> getAgentStandings();
+
+        ApiListResult<NPCCorporationStandingFrom> getCorporationStandingFrom();
+
+        ApiListResult<FactionStandingFrom> getAlliancesStandingFrom();
+    }
+
+    interface AllianceStandings extends ApiResult{
+        AllianceStandingsTo getAllianceStandingsTo();
+    }
+
+    interface AlliancesStandingTo extends ApiResult{
+
+        int getAllianceId();
+
+        String getAllianceName();
+
+        float getStanding();
+    }
+
+    interface AllianceStandingsTo extends ApiResult{
+        ApiListResult<AllianceStandingToCorporation> getCorporations();
+
+        ApiListResult<AllianceStandingToAlliance> getAlliances();
+    }
+
+    interface AgentStandingsFrom extends ApiResult{
+        int getAgendId();
+
+        String getAgendName();
+
+        float getStanding();
+    }
+
+    interface AllianceStandingToAlliance extends ApiResult{
+        int getAllianceId();
+
+        String getAllianceName();
+
+        float getStanding();
+    }
+
+    interface AllianceStandingToCorporation extends ApiResult{
+        int getCorporationId();
+
+        String getCorporationName();
+
+        float getStanding();
+    }
+
+    interface CharacterStandingTo extends ApiResult {
+
+        int getCharacterId();
+
+        String getCharacterName();
+
+        float getStanding();
+    }
+
+    interface CorporationStandingTo extends ApiResult{
+
+        int getCorporationId();
+
+        String getCorporationName();
+
+        float getStanding();
+    }
+
+    interface FactionStandingFrom extends ApiResult{
+        int getFactionId();
+
+        String getFactionName();
+
+        float getStanding();
+    }
+
+    interface NPCCorporationStandingFrom extends ApiResult{
+        int getCorporationId();
+
+        String getCorporationName();
+
+        float getStanding();
+    }
 }
