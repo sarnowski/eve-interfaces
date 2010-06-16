@@ -27,7 +27,7 @@ public interface ApiKey extends Serializable {
 	/**
 	 * @return the user ID
 	 */
-	int getUserId();
+	long getUserId();
 
 	/**
 	 * @return the api key
