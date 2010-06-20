@@ -35,12 +35,12 @@ public interface StarbaseDetail extends ApiResult {
     /**
      * @return when the current state started
      */
-    Date getStateTimestamp();
+    Date getStateTime();
 
     /**
      * @return when the starbase went/goes online
      */
-    Date getOnlineTimestamp();
+    Date getOnlineTime();
 
     /**
      * @return informations about the general settings
@@ -97,7 +97,7 @@ public interface StarbaseDetail extends ApiResult {
         /**
          * @return
          */
-        int isOnStatusDrop();
+        boolean isOnStatusDrop();
 
         /**
          * @return
