@@ -57,13 +57,13 @@ public interface StarbaseList<S extends StarbaseList.Starbase> extends ApiListRe
         /**
          * @return when the state changed to current
          */
-        Date getStateTimestamp();
+        Date getStateTime();
 
         /**
 
          * @return when the starbase went/goes online
          */
-        Date getOnlineTimestamp();
+        Date getOnlineTime();
 
     }
 
