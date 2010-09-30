@@ -4,9 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.github.sarnowski</groupId>
+        <artifactId>github-parent</artifactId>
+        <version>1.0.1</version>
+    </parent>
+
 	<groupId>org.onsteroids.eve</groupId>
 	<artifactId>eve-interfaces</artifactId>
-	<version>1.0-tyrannis-api-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 
 	<name>EVE on steroids: EVE-Online Interfaces</name>
 	<description>This is a collection of EVE-Online interfaces, which describe the APIs, provided by CCP.</description>
@@ -18,8 +24,8 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://sarnowski@github.com/sarnowski/eve-interfaces.git</connection>
-		<developerConnection>scm:git:git@github.com:sarnowski/eve-interfaces.git</developerConnection>
+        <connection>scm:git:git://github.com/sarnowski/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:git@github.com:sarnowski/${project.artifactId}.git</developerConnection>
 	</scm>
 
 	<licenses>
